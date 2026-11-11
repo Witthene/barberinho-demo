@@ -100,6 +100,13 @@ blockquote{font-weight:300;border-left:3px solid var(--verde2);padding:6px 0 6px
 .serv div{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(transparent,rgba(0,0,0,.95))}
 .serv h3{font-size:30px}
 .serv p{font-size:14px;color:#b9bcae}
+.tabela-tit{font-size:34px;margin:60px 0 24px}
+.tabela{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 40px}
+.tabela h4{font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;color:var(--verde2);margin:18px 0 6px}
+.tabela p{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:11px 0;border-bottom:1px solid var(--borda);font-size:15px}
+.tabela b{color:var(--claro);white-space:nowrap;text-align:right}
+.tabela small{grid-column:1/-1;color:#8d907f;font-size:12px}
+@media(max-width:900px){.tabela{grid-template-columns:1fr;gap:0}}
 
 /* planos */
 .planos{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:960px;margin:auto}
@@ -281,11 +288,51 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <span class="tag">Serviços</span>
 <h2 class="titulo reveal">Do corte ao <em>acabamento.</em></h2><div class="linha"></div>
 <div class="servicos">
-<div class="serv reveal"><img src="img/ig61.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="scissors" class="ic "></i><h3>Corte</h3><p>R$ 45 · 30 a 45 min</p></div></div>
-<div class="serv reveal"><img src="img/ig32.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="sparkles" class="ic "></i><h3>Barba</h3><p>R$ 40 · 30 a 45 min</p></div></div>
-<div class="serv reveal"><img src="img/ig54.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="droplets" class="ic "></i><h3>Hidratação</h3><p>R$ 30 · 15 a 30 min</p></div></div>
-<div class="serv reveal"><img src="img/ig9.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="wand-sparkles" class="ic "></i><h3>Sobrancelha</h3><p>R$ 20 · 10 a 15 min</p></div></div>
+<div class="serv reveal"><img src="img/ig61.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="scissors" class="ic "></i><h3>Corte</h3><p>R$ 45 · 45 min</p></div></div>
+<div class="serv reveal"><img src="img/ig32.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="sparkles" class="ic "></i><h3>Barba</h3><p>R$ 40 · 45 min</p></div></div>
+<div class="serv reveal"><img src="img/ig54.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="droplets" class="ic "></i><h3>Hidratação</h3><p>R$ 30 · 15 min</p></div></div>
+<div class="serv reveal"><img src="img/ig9.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="wand-sparkles" class="ic "></i><h3>Sobrancelha</h3><p>A partir de R$ 20 · 15 min</p></div></div>
 </div>
+<h3 class="tabela-tit reveal">Tabela completa</h3>
+<div class="tabela reveal">
+<div><h4>Cabelo</h4>
+<p><span>Corte</span><b>R$ 45</b><small>45 min</small></p>
+<p><span>Corte blindado</span><b>R$ 45</b><small>60 min</small></p>
+<p><span>Pezinho na navalha</span><b>R$ 10</b><small>15 min</small></p>
+<p><span>Penteado</span><b>R$ 20</b><small>15 min</small></p>
+<p><span>Pigmentação no cabelo</span><b>R$ 20</b><small>15 min</small></p>
+<p><span>Hidratação cabelo/barba</span><b>R$ 30</b><small>15 min</small></p>
+<p><span>Nutrição</span><b>R$ 35</b><small>15 min</small></p>
+<p><span>Manutenção de prótese</span><b>R$ 150</b><small>120 min</small></p></div>
+<div><h4>Barba</h4>
+<p><span>Barba</span><b>R$ 40</b><small>45 min</small></p>
+<p><span>Barba express</span><b>R$ 20</b><small>15 min</small></p>
+<p><span>Pigmentação na barba</span><b>R$ 10</b><small>15 min</small></p>
+<p><span>Preenchimento de barba</span><b>a partir de R$ 430</b><small>180 min</small></p>
+<h4>Química</h4>
+<p><span>Luzes</span><b>R$ 140</b><small>90 min</small></p>
+<p><span>Platinado</span><b>consultar</b><small>60 min</small></p>
+<p><span>Desondulação</span><b>consultar</b><small>90 min</small></p>
+<p><span>Desondulação no topete</span><b>R$ 60</b><small>15 min</small></p>
+<p><span>Relaxamento</span><b>a partir de R$ 40</b><small>30 min</small></p></div>
+<div><h4>Rosto</h4>
+<p><span>Sobrancelha na navalha</span><b>R$ 20</b><small>15 min</small></p>
+<p><span>Sobrancelha na linha</span><b>R$ 35</b><small>15 min</small></p>
+<p><span>Depilação de ouvido</span><b>R$ 20</b><small>15 min</small></p>
+<p><span>Depilação nasal</span><b>R$ 20</b><small>15 min</small></p>
+<p><span>Cones hindu</span><b>R$ 50</b><small>15 min</small></p>
+<p><span>Limpeza de pele</span><b>R$ 40</b><small>15 min</small></p>
+<p><span>Limpeza de pele completa</span><b>R$ 60</b><small>60 min</small></p>
+<h4>Combos</h4>
+<p><span>Barba e penteado</span><b>R$ 60</b><small>45 min</small></p>
+<p><span>Barba e sobrancelha (navalha)</span><b>R$ 60</b><small>75 min</small></p>
+<p><span>Barba e sobrancelha (linha)</span><b>R$ 75</b><small>60 min</small></p>
+<p><span>Corte e sobrancelha (navalha)</span><b>R$ 65</b><small>75 min</small></p>
+<p><span>Corte e sobrancelha (linha)</span><b>R$ 80</b><small>75 min</small></p>
+<p><span>Combo Presença: corte, máscara black, desondulação e sobrancelha</span><b>R$ 210</b><small>90 min</small></p>
+<p><span>Combo Presença com barba</span><b>R$ 250</b><small>90 min</small></p></div>
+</div>
+<p class="aviso" style="text-align:left">No relaxamento, venha com o cabelo de 2 a 3 dias sem lavar para evitar ardência.</p>
 <p class="aviso" style="text-align:left"><b style="color:var(--claro)">Primeira vez aqui?</b> De segunda a quarta o corte sai por R$ 24,99 para quem vem ser atendido pela primeira vez. Pagamento em dinheiro, Pix, débito ou crédito.</p>
 </div></section>
 
@@ -298,23 +345,23 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <div class="plano reveal">
 <h3>Corte</h3>
 <div class="preco"><span data-flex="84,90" data-premium="99,90">R$ 84,90</span><small>/mês</small></div>
-<span class="economia">Corte de cabelo</span>
-<ul><li>+1 convidado VIP todo mês</li><li>10% em serviços, cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
+<span class="economia">Corte e pezinho inclusos</span>
+<ul><li data-fx="1 vez por semana, de segunda a quinta" data-pm="Ilimitado, todos os dias">1 vez por semana, de segunda a quinta</li><li>+1 convidado VIP todo mês</li><li>10% em cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
 <a href="#" class="btn out app"><i data-lucide="smartphone" class="ic "></i> Assinar pelo app</a>
 </div>
 <div class="plano reveal">
 <h3>Barba</h3>
 <div class="preco"><span data-flex="94,90" data-premium="109,90">R$ 94,90</span><small>/mês</small></div>
-<span class="economia">Barba</span>
-<ul><li>+1 convidado VIP todo mês</li><li>10% em serviços, cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
+<span class="economia">Barba inclusa</span>
+<ul><li data-fx="1 vez por semana, de segunda a quinta" data-pm="Ilimitado, todos os dias">1 vez por semana, de segunda a quinta</li><li>+1 convidado VIP todo mês</li><li>10% em cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
 <a href="#" class="btn out app"><i data-lucide="smartphone" class="ic "></i> Assinar pelo app</a>
 </div>
 <div class="plano top reveal">
 <span class="selo">Mais completo</span>
 <h3>Corte + Barba</h3>
 <div class="preco"><span data-flex="149,90" data-premium="179,90">R$ 149,90</span><small>/mês</small></div>
-<span class="economia">Cabelo e barba</span>
-<ul><li>+1 convidado VIP todo mês</li><li>10% em serviços, cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
+<span class="economia">Corte, barba e pezinho inclusos</span>
+<ul><li data-fx="1 vez por semana, de segunda a quinta" data-pm="Ilimitado, todos os dias">1 vez por semana, de segunda a quinta</li><li>+1 convidado VIP todo mês</li><li>10% em cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
 <a href="#" class="btn app"><i data-lucide="smartphone" class="ic "></i> Assinar pelo app</a>
 </div>
 </div>
@@ -397,7 +444,7 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <section id="faq"><div class="wrap">
 <div style="text-align:center"><span class="tag">Dúvidas frequentes</span><h2 class="titulo reveal" style="margin-bottom:50px">Ficou alguma <em>dúvida?</em></h2></div>
 <div class="faq">
-<div class="q"><button>Qual a diferença entre Flex e Premium?</button><p>Cada linha tem regras de uso diferentes. Os detalhes completos de cada plano estão na aba Assinaturas do app.</p></div>
+<div class="q"><button>Qual a diferença entre Flex e Premium?</button><p>No Flex você usa o plano 1 vez por semana, de segunda a quinta. No Premium o uso é ilimitado, em qualquer dia de funcionamento. Nos dois você tem 10% de desconto nos cosméticos.</p></div>
 <div class="q"><button>Como eu agendo e assino?</button><p>Tudo pelo app AppBarber Cliente, disponível para Android e iPhone. A assinatura é paga no cartão de crédito.</p></div>
 <div class="q"><button>Tem fidelidade?</button><p>Não. A assinatura pode ser cancelada a qualquer momento. Os termos e condições completos estão no app.</p></div>
 <div class="q"><button>Como funciona o convidado VIP?</button><p>Todo mês você pode trazer um convidado que ainda não seja cliente cadastrado no Barbeirinho.</p></div>
@@ -433,7 +480,7 @@ footer a:hover{color:var(--claro);padding-left:4px}
 const WHATS='5594992578677', IOS='https://apps.apple.com/br/app/appbarber-cliente/id6450795073';
 const APP=/iPhone|iPad|Mac/.test(navigator.userAgent)?IOS:'https://play.google.com/store/apps/details?id=br.com.starapp.appbarbercli';
 document.querySelectorAll('.tipo button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tipo button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-document.querySelectorAll('[data-flex]').forEach(s=>s.textContent='R$ '+s.dataset[b.dataset.t])});
+document.querySelectorAll('[data-flex]').forEach(s=>s.textContent='R$ '+s.dataset[b.dataset.t]);document.querySelectorAll('[data-fx]').forEach(s=>s.textContent=b.dataset.t=='flex'?s.dataset.fx:s.dataset.pm)});
 document.querySelectorAll('.zap').forEach(a=>{a.href='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Vim pelo site do Barbeirinho e gostaria de agendar um horário.');a.target='_blank'});
 document.querySelectorAll('.app').forEach(a=>{a.href=APP;a.target='_blank'});
 
