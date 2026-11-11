@@ -1,50 +1,205 @@
 {
-  "funcionamento": { "modo": "auto", "mensagem": "" },
-  "promo": { "ativa": true, "preco": "R$ 24,99", "dias": "seg a qua" },
-  "topo": ["img/hero1.jpg", "img/hero2.jpg", "img/hero3.jpg", "img/hero4.jpg"],
+  "promo": {
+    "ativa": false,
+    "preco": "R$ 24,99",
+    "dias": "seg a qua"
+  },
+  "topo": [
+    "img/hero1.jpg",
+    "img/hero2.jpg",
+    "img/hero3.jpg",
+    "img/hero4.jpg"
+  ],
   "destaques": [
-    { "nome": "Corte", "preco": "R$ 45", "tempo": "45 min", "foto": "img/fd6.jpg" },
-    { "nome": "Barba", "preco": "R$ 40", "tempo": "45 min", "foto": "img/fd8.jpg" },
-    { "nome": "Hidratação", "preco": "R$ 30", "tempo": "15 min", "foto": "img/fd1.jpg" },
-    { "nome": "Sobrancelha", "preco": "A partir de R$ 20", "tempo": "15 min", "foto": "img/ig9.jpg" }
+    {
+      "nome": "Corte",
+      "preco": "R$ 45",
+      "tempo": "45 min",
+      "foto": "img/fd6.jpg"
+    },
+    {
+      "nome": "Barba",
+      "preco": "R$ 40",
+      "tempo": "45 min",
+      "foto": "img/fd8.jpg"
+    },
+    {
+      "nome": "Hidratação",
+      "preco": "R$ 30",
+      "tempo": "15 min",
+      "foto": "img/fd1.jpg"
+    },
+    {
+      "nome": "Sobrancelha",
+      "preco": "A partir de R$ 20",
+      "tempo": "15 min",
+      "foto": "img/ig9.jpg"
+    }
   ],
   "tabela": [
-    { "grupo": "Cabelo", "itens": [
-      { "nome": "Corte", "tempo": "45 min", "preco": "R$ 45" },
-      { "nome": "Corte blindado", "tempo": "60 min", "preco": "R$ 45" },
-      { "nome": "Pezinho na navalha", "tempo": "15 min", "preco": "R$ 10" },
-      { "nome": "Penteado", "tempo": "15 min", "preco": "R$ 20" },
-      { "nome": "Pigmentação no cabelo", "tempo": "15 min", "preco": "R$ 20" },
-      { "nome": "Hidratação cabelo/barba", "tempo": "15 min", "preco": "R$ 30" },
-      { "nome": "Nutrição", "tempo": "15 min", "preco": "R$ 35" }
-    ]},
-    { "grupo": "Barba", "itens": [
-      { "nome": "Barba", "tempo": "45 min", "preco": "R$ 40" },
-      { "nome": "Barba express", "tempo": "15 min", "preco": "R$ 20" },
-      { "nome": "Pigmentação na barba", "tempo": "15 min", "preco": "R$ 10" }
-    ]},
-    { "grupo": "Química", "itens": [
-      { "nome": "Luzes", "tempo": "90 min", "preco": "R$ 140" },
-      { "nome": "Platinado", "tempo": "60 min", "preco": "consultar" },
-      { "nome": "Desondulação", "tempo": "90 min", "preco": "consultar" },
-      { "nome": "Desondulação no topete", "tempo": "15 min", "preco": "R$ 60" },
-      { "nome": "Relaxamento", "tempo": "30 min", "preco": "a partir de R$ 40" }
-    ]},
-    { "grupo": "Rosto", "itens": [
-      { "nome": "Sobrancelha na navalha", "tempo": "15 min", "preco": "R$ 20" },
-      { "nome": "Sobrancelha na linha", "tempo": "15 min", "preco": "R$ 35" },
-      { "nome": "Depilação de ouvido", "tempo": "15 min", "preco": "R$ 20" },
-      { "nome": "Depilação nasal", "tempo": "15 min", "preco": "R$ 20" },
-      { "nome": "Cones hindu", "tempo": "15 min", "preco": "R$ 50" },
-      { "nome": "Limpeza de pele", "tempo": "15 min", "preco": "R$ 40" },
-      { "nome": "Limpeza de pele completa", "tempo": "60 min", "preco": "R$ 60" }
-    ]}
+    {
+      "grupo": "Cabelo",
+      "itens": [
+        {
+          "nome": "Corte",
+          "tempo": "45 min",
+          "preco": "R$ 45"
+        },
+        {
+          "nome": "Corte blindado",
+          "tempo": "60 min",
+          "preco": "R$ 45"
+        },
+        {
+          "nome": "Pezinho na navalha",
+          "tempo": "15 min",
+          "preco": "R$ 10"
+        },
+        {
+          "nome": "Penteado",
+          "tempo": "15 min",
+          "preco": "R$ 20"
+        },
+        {
+          "nome": "Pigmentação no cabelo",
+          "tempo": "15 min",
+          "preco": "R$ 20"
+        },
+        {
+          "nome": "Hidratação cabelo/barba",
+          "tempo": "15 min",
+          "preco": "R$ 30"
+        },
+        {
+          "nome": "Nutrição",
+          "tempo": "15 min",
+          "preco": "R$ 35"
+        }
+      ]
+    },
+    {
+      "grupo": "Barba",
+      "itens": [
+        {
+          "nome": "Barba",
+          "tempo": "45 min",
+          "preco": "R$ 40"
+        },
+        {
+          "nome": "Barba express",
+          "tempo": "15 min",
+          "preco": "R$ 20"
+        },
+        {
+          "nome": "Pigmentação na barba",
+          "tempo": "15 min",
+          "preco": "R$ 10"
+        }
+      ]
+    },
+    {
+      "grupo": "Química",
+      "itens": [
+        {
+          "nome": "Luzes",
+          "tempo": "90 min",
+          "preco": "R$ 140"
+        },
+        {
+          "nome": "Platinado",
+          "tempo": "60 min",
+          "preco": "consultar"
+        },
+        {
+          "nome": "Desondulação",
+          "tempo": "90 min",
+          "preco": "consultar"
+        },
+        {
+          "nome": "Desondulação no topete",
+          "tempo": "15 min",
+          "preco": "R$ 60"
+        },
+        {
+          "nome": "Relaxamento",
+          "tempo": "30 min",
+          "preco": "a partir de R$ 40"
+        }
+      ]
+    },
+    {
+      "grupo": "Rosto",
+      "itens": [
+        {
+          "nome": "Sobrancelha na navalha",
+          "tempo": "15 min",
+          "preco": "R$ 20"
+        },
+        {
+          "nome": "Sobrancelha na linha",
+          "tempo": "15 min",
+          "preco": "R$ 35"
+        },
+        {
+          "nome": "Depilação de ouvido",
+          "tempo": "15 min",
+          "preco": "R$ 20"
+        },
+        {
+          "nome": "Depilação nasal",
+          "tempo": "15 min",
+          "preco": "R$ 20"
+        },
+        {
+          "nome": "Cones hindu",
+          "tempo": "15 min",
+          "preco": "R$ 50"
+        },
+        {
+          "nome": "Limpeza de pele",
+          "tempo": "15 min",
+          "preco": "R$ 40"
+        },
+        {
+          "nome": "Limpeza de pele completa",
+          "tempo": "60 min",
+          "preco": "R$ 60"
+        }
+      ]
+    }
   ],
   "planos": [
-    { "nome": "Corte", "flex": "84,90", "premium": "99,90" },
-    { "nome": "Barba", "flex": "94,90", "premium": "109,90" },
-    { "nome": "Corte + Barba", "flex": "149,90", "premium": "179,90" }
+    {
+      "nome": "Corte",
+      "flex": "84,90",
+      "premium": "99,90"
+    },
+    {
+      "nome": "Barba",
+      "flex": "94,90",
+      "premium": "109,90"
+    },
+    {
+      "nome": "Corte + Barba",
+      "flex": "149,90",
+      "premium": "179,90"
+    }
   ],
-  "galeria": ["img/g1.jpg", "img/g2.jpg", "img/g3.jpg", "img/g4.jpg", "img/g5.jpg", "img/g6.jpg", "img/g7.jpg", "img/g8.jpg", "img/g9.jpg", "img/g10.jpg", "img/g11.jpg"],
-  "antesDepois": { "antes": "img/antes.jpg", "depois": "img/depois.jpg" }
+  "galeria": [
+    "img/g1.jpg",
+    "img/g2.jpg",
+    "img/g3.jpg",
+    "img/g4.jpg",
+    "img/g5.jpg",
+    "img/g6.jpg",
+    "img/g7.jpg",
+    "img/g8.jpg",
+    "img/g9.jpg",
+    "img/g10.jpg",
+    "img/g11.jpg"
+  ],
+  "antesDepois": {
+    "antes": "img/antes.jpg",
+    "depois": "img/depois.jpg"
+  }
 }
