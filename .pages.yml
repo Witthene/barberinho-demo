@@ -1,0 +1,62 @@
+media:
+  input: img
+  output: img
+content:
+  - name: site
+    label: Preços e fotos
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: promo
+        label: Promoção do primeiro corte
+        type: object
+        fields:
+          - { name: ativa, label: Mostrar promoção, type: boolean }
+          - { name: preco, label: Preço, type: string }
+          - { name: dias, label: Dias (ex. seg a qua), type: string }
+      - name: topo
+        label: Fotos do topo (4 fotos, de preferência horizontais)
+        type: image
+        list: { min: 4, max: 4 }
+      - name: destaques
+        label: Serviços em destaque (4 cards)
+        type: object
+        list: { min: 4, max: 4 }
+        fields:
+          - { name: nome, label: Nome, type: string }
+          - { name: preco, label: Preço, type: string }
+          - { name: tempo, label: Duração, type: string }
+          - { name: foto, label: Foto, type: image }
+      - name: tabela
+        label: Tabela completa de preços
+        type: object
+        list: true
+        fields:
+          - { name: grupo, label: Categoria, type: string }
+          - name: itens
+            label: Serviços
+            type: object
+            list: true
+            fields:
+              - { name: nome, label: Serviço, type: string }
+              - { name: tempo, label: Duração, type: string }
+              - { name: preco, label: Preço, type: string }
+      - name: planos
+        label: Planos de assinatura
+        type: object
+        list: { min: 3, max: 3 }
+        fields:
+          - { name: nome, label: Plano, type: string }
+          - { name: flex, label: Preço Flex (ex. 84,90), type: string }
+          - { name: premium, label: Preço Premium (ex. 99,90), type: string }
+      - name: galeria
+        label: Galeria (11 fotos)
+        type: image
+        list: { min: 11, max: 11 }
+      - name: antesDepois
+        label: Antes e depois
+        type: object
+        fields:
+          - { name: antes, label: Foto antes, type: image }
+          - { name: depois, label: Foto depois, type: image }
