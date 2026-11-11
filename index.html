@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barbearia do Barberinho | Estilo & bons negócios</title>
+<meta name="description" content="Barbeirinho Barbearia em Tucumã-PA. Corte, barba, hidratação e planos de assinatura sem fidelidade. Agende pelo AppBarber.">
+<meta property="og:title" content="Barbeirinho Barbearia · Tucumã">
+<meta property="og:description" content="Seu visual em dia, todo dia. Corte, barba e planos de assinatura.">
+<meta property="og:image" content="img/ig25.jpg">
+<meta name="theme-color" content="#0b0c0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234b5320'/%3E%3Ctext x='50' y='72' font-size='64' text-anchor='middle' fill='%23e8e8e2' font-family='Arial' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E">
+<title>Barbeirinho Barbearia | Seu visual em dia, todo dia</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--preto:#0b0c0a;--preto2:#121410;--verde:#4b5320;--verde2:#6b7a3a;--claro:#c9d1a3;--txt:#e8e8e2;--cinza:#8a8d80;--borda:#262a1e}
@@ -41,13 +47,13 @@ nav{display:flex;align-items:center;justify-content:space-between;height:80px}
 
 /* hero */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero .bg{position:absolute;inset:-5%;background:url(img/web1.jpg) center/cover;animation:zoom 20s ease-in-out infinite alternate}
+.hero .bg{position:absolute;inset:-5%;background:url(img/ig25.jpg) center/cover;animation:zoom 20s ease-in-out infinite alternate}
 @keyframes zoom{to{transform:scale(1.12)}}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--preto) 25%,rgba(11,12,10,.55) 70%,rgba(11,12,10,.3)),linear-gradient(0deg,var(--preto),transparent 40%);z-index:1}
 .hero .wrap{position:relative;z-index:2;width:100%}
 .tag{color:var(--verde2);text-transform:uppercase;letter-spacing:4px;font-size:12px;font-weight:600;margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
 .tag:before{content:"";width:28px;height:2px;background:var(--verde2)}
-.hero h1{font-size:clamp(60px,10vw,138px);line-height:.88;max-width:800px}
+.hero h1{font-size:clamp(56px,8.5vw,120px);line-height:.88;max-width:1000px}
 .hero h1 em{display:block}
 .hero p{max-width:500px;margin:26px 0 38px;color:#c2c5b8;font-size:18px}
 .acoes{display:flex;gap:14px;flex-wrap:wrap}
@@ -109,6 +115,7 @@ blockquote{font-weight:300;border-left:3px solid var(--verde2);padding:6px 0 6px
 .plano li{padding:10px 0;border-bottom:1px solid var(--borda);font-size:15px}
 
 .plano .btn{width:100%;justify-content:center}
+.planos.tres{grid-template-columns:repeat(3,1fr);max-width:1140px}.planos.tres .plano{padding:38px 30px}
 .aviso{color:var(--cinza);margin-top:30px;font-size:13px;text-align:center}
 
 /* beneficios */
@@ -182,7 +189,11 @@ blockquote{font-weight:300;border-left:3px solid var(--verde2);padding:6px 0 6px
 .info{padding:50px;background:var(--preto)}
 .info div{padding:16px 0;border-bottom:1px solid var(--borda)}
 .info small{color:var(--verde2);text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:600;display:block}
-.local iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(1) invert(.9) contrast(.9)}
+.local iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3) contrast(.95)}
+
+.mapa{position:relative;display:block;min-height:420px;background:var(--preto2)}
+.mapa:before{content:"Abrir no Google Maps";position:absolute;inset:0;display:grid;place-items:center;color:var(--verde2);font-weight:600;letter-spacing:1px}
+.mapa iframe{position:relative}
 
 /* faq */
 .faq{max-width:860px;margin:auto}
@@ -194,7 +205,7 @@ blockquote{font-weight:300;border-left:3px solid var(--verde2);padding:6px 0 6px
 .q.aberto p{max-height:200px;padding-bottom:26px}
 
 .cta{text-align:center;position:relative;overflow:hidden;padding:160px 0}
-.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(11,12,10,.75),rgba(11,12,10,.92)),url(img/web6.jpg) center/cover fixed}
+.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(11,12,10,.75),rgba(11,12,10,.92)),url(img/ig76.jpg) center/cover fixed}
 .cta .wrap{position:relative}
 .cta .titulo{max-width:860px;margin:0 auto 34px}
 .cta .acoes{justify-content:center}
@@ -214,53 +225,53 @@ footer a:hover{color:var(--claro);padding-left:4px}
 @media(max-width:980px){
 .links{display:none;position:absolute;top:80px;left:0;right:0;background:var(--preto);flex-direction:column;padding:30px;gap:20px;border-bottom:1px solid var(--borda)}
 .links.on{display:flex}.menu{display:block}nav>.btn{display:none}
-.duas,.planos,.local{grid-template-columns:1fr}.servicos,.equipe,.parceiros{grid-template-columns:1fr 1fr}.bens{grid-template-columns:1fr}
+.duas,.planos,.planos.tres,.local{grid-template-columns:1fr}.servicos,.equipe,.parceiros{grid-template-columns:1fr 1fr}.bens{grid-template-columns:1fr}
 .galeria{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;gap:30px}.fotos{height:420px}}
 @media(max-width:600px){section{padding:80px 0}.servicos,.equipe,.parceiros,.check{grid-template-columns:1fr}.serv{height:300px}.membro .foto{height:320px}.galeria{grid-auto-rows:160px}.plano{padding:32px 24px}.preco{font-size:58px}.info{padding:30px 24px}.local iframe{min-height:300px}.cols{grid-template-columns:1fr}.hero p{font-size:16px}.acoes .btn{width:100%;justify-content:center}.fotos{height:360px}.selo-gira{width:90px;height:90px}.celular{transform:scale(.9)}.depo-box{min-height:330px}.depo p{font-weight:300;font-size:19px}}
 .ic{width:1.15em;height:1.15em;stroke-width:1.8;vertical-align:-.2em;flex:none}.bem .ico{width:54px;height:54px;border-radius:14px;background:rgba(107,122,58,.15);border:1px solid var(--verde);display:grid;place-items:center;color:var(--claro);margin-bottom:18px;position:relative}.bem .ico .ic{width:26px;height:26px}.bem b{position:absolute!important;top:24px;right:28px;font-size:34px!important;opacity:.35}.serv .ic{width:34px;height:34px;color:var(--claro);margin-bottom:8px}.atalhos .ic{display:block;width:24px;height:24px;color:var(--claro);margin-bottom:8px}.info small{display:flex!important;align-items:center;gap:8px}.parc small{display:flex;align-items:center;gap:6px}.estrelas{display:flex;justify-content:center;gap:4px;color:#d4b84a}.estrelas .ic{fill:#d4b84a;width:22px;height:22px}footer a{display:flex!important;align-items:center;gap:8px}.menu .ic{width:30px;height:30px}
 </style>
 </head>
 <body>
-<div id="loader"><div>BARBER<span>INHO</span></div></div>
+<div id="loader"><img src="img/logo.svg" alt="" style="width:220px;animation:pulsa 1s infinite alternate"></div>
 
 <header id="topo"><nav class="wrap">
-<a href="#" class="logo"><span>B</span><div>BARBERINHO<small>BARBEARIA & CLUBE</small></div></a>
-<div class="links" id="links"><a href="#historia">História</a><a href="#servicos">Serviços</a><a href="#clube">Clube</a><a href="#galeria">Galeria</a><a href="#equipe">Equipe</a><a href="#app">App</a><a href="#local">Onde estamos</a></div>
+<a href="#" class="logo"><img src="img/logo.svg" alt="Barbeirinho" style="height:54px"></a>
+<div class="links" id="links"><a href="#historia">História</a><a href="#servicos">Serviços</a><a href="#clube">Clube</a><a href="#galeria">Galeria</a><a href="#app">App</a><a href="#local">Onde estamos</a></div>
 <a href="#" class="btn app">Agendar pelo app</a>
 <button class="menu" id="menu"><i data-lucide="menu" class="ic "></i></button>
 </nav></header>
 
 <section class="hero"><div class="bg"></div><div class="wrap">
-<span class="tag reveal">Barbearia do Barberinho · Tucumã</span>
-<h1 class="reveal">Estilo & bons negócios <em>andam juntos.</em></h1>
-<p class="reveal">Mais que uma barbearia: um clube para homens que cuidam da imagem e da própria vida. Corte e barba sem limite, todo mês, com quem entende do assunto.</p>
+<span class="tag reveal">Barbeirinho Barbearia · Tucumã</span>
+<h1 class="reveal">Seu visual em dia, <em>todo dia.</em></h1>
+<p class="reveal">Para homens que não aceitam o básico. Atendimento exclusivo, ambiente climatizado e planos de assinatura para você nunca mais andar com o cabelo por fazer.</p>
 <div class="acoes reveal"><a href="#" class="btn app"><i data-lucide="calendar-check" class="ic "></i> Agendar pelo app</a><a href="#" class="btn out zap"><i data-lucide="message-circle" class="ic "></i> Falar no WhatsApp</a></div>
 <div class="stats reveal">
-<div><b>∞</b><small>Cortes no mês</small></div>
+<div><b>5.0</b><small>Nota dos clientes</small></div>
 <div><b class="conta" data-n="1" data-pre="+">0</b><small>Convidado VIP mensal</small></div>
-<div><b class="conta" data-n="11" data-pre="+">0</b><small>Parceiros do clube</small></div>
-<div><b class="conta" data-n="15" data-suf="%">0</b><small>Off nos 3 primeiros meses</small></div>
+<div><b class="conta" data-n="10" data-suf="%">0</b><small>Off para membros</small></div>
+<div><b>2023</b><small>Desde</small></div>
 </div>
 </div><div class="rolar"></div></section>
 
 <div class="faixa"><div>
-<span>Corte ilimitado</span><span>Barba na régua</span><span>Clube de vantagens</span><span>Convidado VIP</span><span>Estilo & bons negócios</span><span>Agende pelo app</span>
-<span>Corte ilimitado</span><span>Barba na régua</span><span>Clube de vantagens</span><span>Convidado VIP</span><span>Estilo & bons negócios</span><span>Agende pelo app</span>
+<span>Clube de assinatura</span><span>Barba na régua</span><span>Clube de vantagens</span><span>Convidado VIP</span><span>Seu visual em dia</span><span>Agende pelo app</span>
+<span>Clube de assinatura</span><span>Barba na régua</span><span>Clube de vantagens</span><span>Convidado VIP</span><span>Seu visual em dia</span><span>Agende pelo app</span>
 </div></div>
 
 <section id="historia"><div class="wrap duas">
 <div class="fotos reveal">
-<img src="img/web0.jpg" alt="Barba">
-<img src="img/foto3.jpg" alt="Atendimento">
-<svg class="selo-gira" viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><circle cx="50" cy="50" r="49" fill="#4b5320"/><text font-size="10.5" fill="#e8e8e2" letter-spacing="2.4" font-family="Inter"><textPath href="#c">• BARBERINHO • CLUBE DE MEMBROS </textPath></text><text x="50" y="60" text-anchor="middle" font-size="28" fill="#c9d1a3" font-family="Bebas Neue">B</text></svg>
+<img src="img/ig17.jpg" alt="Cliente na cadeira do Barbeirinho">
+<img src="img/ig30.jpg" alt="Corte finalizado" loading="lazy">
+<svg class="selo-gira" viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><circle cx="50" cy="50" r="49" fill="#4b5320"/><text font-size="10.5" fill="#e8e8e2" letter-spacing="2.4" font-family="Inter"><textPath href="#c">• BARBEIRINHO • CLUBE DE MEMBROS </textPath></text><text x="50" y="60" text-anchor="middle" font-size="28" fill="#c9d1a3" font-family="Bebas Neue">B</text></svg>
 </div>
 <div class="reveal">
 <span class="tag">A nossa história</span>
-<h2 class="titulo">Um lugar feito para homens que <em>lideram.</em></h2>
+<h2 class="titulo">Desde 2023 elevando o <em>padrão.</em></h2>
 <div class="linha"></div>
-<p class="sub">O Barberinho nasceu da ideia de que cuidar da aparência é cuidar da confiança. Aqui o atendimento é de primeira, o ambiente é de respeito e cada visita é uma experiência, com conversa boa, bebida gelada e gente que faz acontecer.</p>
-<div class="check"><div>Profissionais experientes</div><div>Ambiente climatizado</div><div>Bebidas e boa conversa</div><div>Agendamento pelo app</div></div>
-<blockquote>"Nosso compromisso é receber e atender você da melhor forma possível."</blockquote>
+<p class="sub">O Barbeirinho surgiu em 2023 da vontade de mudar a realidade do atendimento em barbearia na nossa região, com qualidade e atendimento exclusivo. Enquanto você espera, tem cafezinho, balinhas e bolachas pra deixar tudo mais agradável.</p>
+<div class="check"><div>Ambiente climatizado</div><div>Bebidas</div><div>TV e videogame</div><div>Wi-fi liberado</div><div>Atende crianças</div><div>Encaixe sem horário marcado</div></div>
+<blockquote>"Para homens que não aceitam o básico."<small style="display:block;font-size:14px;font-style:normal;color:var(--cinza);margin-top:8px">Adriano Luiz, fundador</small></blockquote>
 </div>
 </div></section>
 
@@ -268,49 +279,56 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <span class="tag">Serviços</span>
 <h2 class="titulo reveal">Do corte ao <em>acabamento.</em></h2><div class="linha"></div>
 <div class="servicos">
-<div class="serv reveal"><img src="img/web7.jpg" alt=""><div><i data-lucide="scissors" class="ic "></i><h3>Corte</h3><p>Do clássico ao degradê, no seu estilo.</p></div></div>
-<div class="serv reveal"><img src="img/foto77.jpg" alt=""><div><i data-lucide="sparkles" class="ic "></i><h3>Barba</h3><p>Toalha quente, navalha e acabamento na régua.</p></div></div>
-<div class="serv reveal"><img src="img/foto13.jpg" alt=""><div><i data-lucide="flame" class="ic "></i><h3>Barboterapia</h3><p>Um momento de relaxamento completo.</p></div></div>
-<div class="serv reveal"><img src="img/web2.jpg" alt=""><div><i data-lucide="wand-sparkles" class="ic "></i><h3>Sobrancelha & selagem</h3><p>Com 10% de desconto para membros.</p></div></div>
+<div class="serv reveal"><img src="img/ig61.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="scissors" class="ic "></i><h3>Corte</h3><p>R$ 45 · 30 a 45 min</p></div></div>
+<div class="serv reveal"><img src="img/ig32.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="sparkles" class="ic "></i><h3>Barba</h3><p>R$ 40 · 30 a 45 min</p></div></div>
+<div class="serv reveal"><img src="img/ig54.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="droplets" class="ic "></i><h3>Hidratação</h3><p>R$ 30 · 15 a 30 min</p></div></div>
+<div class="serv reveal"><img src="img/ig9.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="wand-sparkles" class="ic "></i><h3>Sobrancelha</h3><p>R$ 20 · 10 a 15 min</p></div></div>
 </div>
+<p class="aviso" style="text-align:left"><b style="color:var(--claro)">Primeira vez aqui?</b> De segunda a quarta o corte sai por R$ 24,99 para quem vem ser atendido pela primeira vez. Pagamento em dinheiro, Pix, débito ou crédito.</p>
 </div></section>
 
 <section id="clube"><div class="wrap">
-<div style="text-align:center"><span class="tag">Clube Barberinho</span>
-<h2 class="titulo reveal">Assine e corte <em>sem limite.</em></h2>
-<p class="sub reveal" style="margin:16px auto 60px">Faça as contas: com dois cortes no mês a assinatura já se paga. Daí pra frente, é tudo lucro.</p></div>
-<div class="planos">
+<div style="text-align:center"><span class="tag">Clube Barbeirinho</span>
+<h2 class="titulo reveal">Assine e fique <em>sempre na régua.</em></h2>
+<p class="sub reveal" style="margin:16px auto 30px">Sem fidelidade: cancele quando quiser. Escolha a linha Flex ou Premium e o que entra no seu plano.</p>
+<div class="filtros tipo" style="justify-content:center"><button class="on" data-t="flex">Flex</button><button data-t="premium">Premium</button></div></div>
+<div class="planos tres">
 <div class="plano reveal">
-<h3>Cabelo</h3>
-<p class="de">2 cortes avulsos: <s>R$ 140,00</s></p>
-<div class="preco">R$ 129,90<small>/mês</small></div>
-<span class="economia">Cortes ilimitados</span>
-<ul><li>Cortes de cabelo ilimitados</li><li>+1 convidado VIP todo mês</li><li>Acesso ao Clube Barberinho</li><li>Descontos em produtos e serviços</li><li>Descontos nos parceiros</li></ul>
-<a href="#" class="btn out zap"><i data-lucide="message-circle" class="ic "></i> Assinar pelo WhatsApp</a>
+<h3>Corte</h3>
+<div class="preco"><span data-flex="84,90" data-premium="99,90">R$ 84,90</span><small>/mês</small></div>
+<span class="economia">Corte de cabelo</span>
+<ul><li>+1 convidado VIP todo mês</li><li>10% em serviços, cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
+<a href="#" class="btn out app"><i data-lucide="smartphone" class="ic "></i> Assinar pelo app</a>
+</div>
+<div class="plano reveal">
+<h3>Barba</h3>
+<div class="preco"><span data-flex="94,90" data-premium="109,90">R$ 94,90</span><small>/mês</small></div>
+<span class="economia">Barba</span>
+<ul><li>+1 convidado VIP todo mês</li><li>10% em serviços, cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
+<a href="#" class="btn out app"><i data-lucide="smartphone" class="ic "></i> Assinar pelo app</a>
 </div>
 <div class="plano top reveal">
 <span class="selo">Mais completo</span>
-<h3>Cabelo + Barba</h3>
-<p class="de">2 cortes e barbas avulsos: <s>R$ 260,00</s></p>
-<div class="preco">R$ 229,90<small>/mês</small></div>
-<span class="economia">Cabelo e barba ilimitados</span>
-<ul><li>Cabelo e barba ilimitados</li><li>+1 convidado VIP todo mês</li><li>Acesso ao Clube Barberinho</li><li>Descontos em produtos e serviços</li><li>Descontos nos parceiros</li></ul>
-<a href="#" class="btn zap"><i data-lucide="message-circle" class="ic "></i> Assinar pelo WhatsApp</a>
+<h3>Corte + Barba</h3>
+<div class="preco"><span data-flex="149,90" data-premium="179,90">R$ 149,90</span><small>/mês</small></div>
+<span class="economia">Cabelo e barba</span>
+<ul><li>+1 convidado VIP todo mês</li><li>10% em serviços, cosméticos e consumo</li><li>Descontos nos parceiros</li></ul>
+<a href="#" class="btn app"><i data-lucide="smartphone" class="ic "></i> Assinar pelo app</a>
 </div>
 </div>
-<p class="aviso">A assinatura é feita com a nossa equipe pelo WhatsApp. O convite VIP vale para quem ainda não é cliente cadastrado.</p>
+<p class="aviso">Assinatura pelo app AppBarber, paga somente no cartão de crédito. Sem fidelidade. Leia os termos e condições no app. O convite VIP vale para quem ainda não é cliente cadastrado.</p>
 </div></section>
 
 <section id="beneficios" class="alt"><div class="wrap">
 <span class="tag">Benefícios de membro</span>
 <h2 class="titulo reveal">Ser membro <em>compensa.</em></h2><div class="linha"></div>
 <div class="bens">
-<div class="bem reveal"><div class="ico"><i data-lucide="user-plus" class="ic "></i></div><b>01</b><h3>Convidado VIP</h3><p>Traga um amigo todo mês para conhecer a experiência Barberinho.</p></div>
-<div class="bem reveal"><div class="ico"><i data-lucide="scissors" class="ic "></i></div><b>02</b><h3>10% em serviços</h3><p>Sobrancelha, selagem e outros serviços com desconto.</p></div>
+<div class="bem reveal"><div class="ico"><i data-lucide="user-plus" class="ic "></i></div><b>01</b><h3>Convidado VIP</h3><p>Traga um amigo todo mês para conhecer a experiência Barbeirinho.</p></div>
+<div class="bem reveal"><div class="ico"><i data-lucide="scissors" class="ic "></i></div><b>02</b><h3>10% em serviços</h3><p>Sobrancelha, hidratação e outros serviços com desconto.</p></div>
 <div class="bem reveal"><div class="ico"><i data-lucide="droplets" class="ic "></i></div><b>03</b><h3>10% em cosméticos</h3><p>Desconto nos nossos produtos de cuidado masculino.</p></div>
 <div class="bem reveal"><div class="ico"><i data-lucide="coffee" class="ic "></i></div><b>04</b><h3>10% no consumo</h3><p>Bebidas e produtos consumidos na barbearia mais baratos.</p></div>
-<div class="bem reveal"><div class="ico"><i data-lucide="badge-percent" class="ic "></i></div><b>05</b><h3>15% de boas-vindas</h3><p>Desconto nos três primeiros meses de assinatura.</p></div>
-<div class="bem reveal"><div class="ico"><i data-lucide="handshake" class="ic "></i></div><b>06</b><h3>Rede de parceiros</h3><p>Descontos exclusivos em lojas, saúde, eventos e muito mais.</p></div>
+<div class="bem reveal"><div class="ico"><i data-lucide="calendar-x" class="ic "></i></div><b>05</b><h3>Sem fidelidade</h3><p>Cancele a assinatura quando quiser, sem contrato mínimo.</p></div>
+<div class="bem reveal"><div class="ico"><i data-lucide="handshake" class="ic "></i></div><b>06</b><h3>Rede de parceiros</h3><p>Descontos exclusivos em empresas parceiras de Tucumã.</p></div>
 </div>
 </div></section>
 
@@ -318,66 +336,46 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <span class="tag">Galeria</span>
 <h2 class="titulo reveal">O clima da <em>casa.</em></h2><div class="linha"></div>
 <div class="galeria reveal">
-<img class="g" src="img/web3.jpg" alt=""><img class="l" src="img/foto18.jpg" alt=""><img src="img/web8.jpg" alt="">
-<img src="img/web14.jpg" alt=""><img src="img/web4.jpg" alt=""><img class="g" src="img/foto0.jpg" alt="">
-<img class="l" src="img/web10.jpg" alt=""><img src="img/foto8.jpg" alt=""><img src="img/web12.jpg" alt=""><img src="img/web5.jpg" alt=""><img src="img/web6.jpg" alt="">
+<img class="g" src="img/ig18.jpg" alt="Foto do Barbeirinho" loading="lazy"><img class="l" src="img/ig26.jpg" alt="Foto do Barbeirinho" loading="lazy"><img src="img/ig28.jpg" alt="Foto do Barbeirinho" loading="lazy">
+<img src="img/ig33.jpg" alt="Foto do Barbeirinho" loading="lazy"><img src="img/ig60.jpg" alt="Foto do Barbeirinho" loading="lazy"><img class="g" src="img/ig107.jpg" alt="Foto do Barbeirinho" loading="lazy">
+<img class="l" src="img/ig96.jpg" alt="Foto do Barbeirinho" loading="lazy"><img src="img/ig64.jpg" alt="Foto do Barbeirinho" loading="lazy"><img src="img/ig71.jpg" alt="Foto do Barbeirinho" loading="lazy"><img src="img/ig116.jpg" alt="Foto do Barbeirinho" loading="lazy"><img src="img/ig76.jpg" alt="Foto do Barbeirinho" loading="lazy">
 </div>
 </div></section>
 
-<section id="equipe" class="alt"><div class="wrap">
-<span class="tag">Quem faz acontecer</span>
-<h2 class="titulo reveal">Nossa <em>equipe.</em></h2><div class="linha"></div>
-<div class="equipe">
-<div class="membro reveal"><div class="foto"><img src="img/web9.jpg" alt=""></div><small>Fundador</small><h3>Barberinho</h3></div>
-<div class="membro reveal"><div class="foto"><img src="img/web17.jpg" alt=""></div><small>Degradê & freestyle</small><h3>Barbeiro</h3></div>
-<div class="membro reveal"><div class="foto"><img src="img/web5.jpg" alt=""></div><small>Corte clássico</small><h3>Barbeiro</h3></div>
-<div class="membro reveal"><div class="foto"><img src="img/foto77.jpg" alt=""></div><small>Barba & barboterapia</small><h3>Barbeiro</h3></div>
-</div>
-</div></section>
 
 <section id="parceiros"><div class="wrap">
 <span class="tag">Rede de parceiros</span>
 <h2 class="titulo reveal">O clube vai além <em>da cadeira.</em></h2><div class="linha"></div>
-<div class="filtros">
-<button class="on" data-f="todos">Todos</button><button data-f="saude">Saúde & bem-estar</button><button data-f="life">Lifestyle</button><button data-f="casa">Casa & serviços</button>
-</div>
+<p class="sub" style="margin-bottom:36px">Para usar o desconto, é só mostrar o app aberto na aba da sua assinatura.</p>
 <div class="parceiros">
-<div class="parc" data-c="life"><small><i data-lucide="shirt" class="ic "></i>Vestuário</small><div class="pct">10% OFF</div><h3>Aramis Araguaína</h3></div>
-<div class="parc" data-c="life"><small><i data-lucide="ticket" class="ic "></i>Eventos</small><div class="pct">15% OFF</div><h3>LH Shows</h3></div>
-<div class="parc" data-c="saude"><small><i data-lucide="dumbbell" class="ic "></i>Suplementos</small><div class="pct">10% OFF</div><h3>Villa Salut</h3></div>
-<div class="parc" data-c="saude"><small><i data-lucide="stethoscope" class="ic "></i>Endócrino e nutrólogo</small><div class="pct">10% OFF</div><h3>Dr. Danyllo Carvalho</h3></div>
-<div class="parc" data-c="casa"><small><i data-lucide="washing-machine" class="ic "></i>Lavanderia</small><div class="pct">10% OFF</div><h3>Lavô Lavanderia</h3></div>
-<div class="parc" data-c="life"><small><i data-lucide="utensils" class="ic "></i>Restaurante</small><div class="pct">10% OFF</div><h3>Rancho Biá</h3></div>
-<div class="parc" data-c="saude"><small><i data-lucide="smile" class="ic "></i>Odontologia</small><div class="pct">10% OFF</div><h3>Ortoestética · até 10x</h3></div>
-<div class="parc" data-c="life"><small><i data-lucide="footprints" class="ic "></i>Calçados</small><div class="pct">10% OFF</div><h3>Sergios</h3></div>
-<div class="parc" data-c="saude"><small><i data-lucide="heart" class="ic "></i>Cuidados pessoais</small><div class="pct">R$50 back</div><h3>Euphoria</h3></div>
-<div class="parc" data-c="casa"><small><i data-lucide="sofa" class="ic "></i>Estofados</small><div class="pct">10% OFF</div><h3>Anjos Colchões</h3></div>
-<div class="parc" data-c="saude"><small><i data-lucide="user-round" class="ic "></i>Cabelo</small><div class="pct">R$400 OFF</div><h3>Mais Cabelo · 15% no implante</h3></div>
+<div class="parc"><small><i data-lucide="wifi" class="ic "></i>Internet</small><div class="pct">30% OFF</div><h3>JATIMnet · na 1ª mensalidade</h3></div>
+<div class="parc"><small><i data-lucide="ice-cream-bowl" class="ic "></i>Açaiteria</small><div class="pct">10% OFF</div><h3>Açaiteria Premium</h3></div>
 </div>
 </div></section>
 
 <section class="alt"><div class="wrap">
-<div style="text-align:center"><span class="tag">Quem é membro aprova</span><h2 class="titulo reveal" style="margin-bottom:50px">O que dizem <em>por aí.</em></h2></div>
+<div style="text-align:center"><span class="tag">5 estrelas no Google e no AppBarber</span><h2 class="titulo reveal" style="margin-bottom:50px">O que dizem <em>por aí.</em></h2></div>
 <div class="depo-box">
-<div class="depo ativo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Melhor investimento que fiz. Corto toda semana e ainda levo um amigo todo mês."</p><b>Rafael M.</b><small>Membro do plano Cabelo + Barba</small></div>
-<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Ambiente top, galera boa e o desconto nos parceiros já paga metade da assinatura."</p><b>Lucas A.</b><small>Membro do plano Cabelo</small></div>
-<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Agendo pelo app em dez segundos e chego com a cadeira me esperando. Atendimento nota mil."</p><b>Diego S.</b><small>Membro do plano Cabelo + Barba</small></div>
+<div class="depo ativo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Excelente atendimento. Profissionais competentes e simpáticos."</p><b>José Carlos Rodrigues</b><small>Avaliação no AppBarber</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Barbearia com excelência no atendimento!"</p><b>Hiago Rocha</b><small>Avaliação no AppBarber</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Top, o melhor!"</p><b>Messias Barbosa</b><small>Avaliação no AppBarber</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Atendimento de qualidade 👏👏👏"</p><b>Joelson Alves Freitas</b><small>Avaliação no AppBarber</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Ótimos barbeiros, que além de fazer bons cortes, conversam com o cliente como fossem companheiros!"</p><b>Mateus Gonçalino</b><small>Avaliação no Google</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Muito compensado, ambiente aconchegante. Melhor barbearia de Tucumã."</p><b>TV da Família</b><small>Avaliação no Google</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Ambiente agradável e profissionais excelentes."</p><b>Elinelson Pereira</b><small>Avaliação no Google</small></div>
+<div class="depo"><div class="estrelas"><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i><i data-lucide="star" class="ic "></i></div><p>"Ambiente muito confortável, recepcionista muito gentil."</p><b>Raquel Ribeiro Dias</b><small>Avaliação no Google</small></div>
 </div>
-<div class="pontos"><button class="on"></button><button></button><button></button></div>
+<div class="pontos"><button class="on"></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button></div>
 </div></section>
 
 <section id="app"><div class="wrap duas">
 <div class="reveal">
 <span class="tag">Tudo na palma da mão</span>
 <h2 class="titulo">Agende pelo <em>nosso app.</em></h2><div class="linha"></div>
-<div class="passos"><div>Baixe o aplicativo do Barberinho.</div><div>Crie sua conta em poucos segundos.</div><div>Escolha o barbeiro, o dia e o horário.</div><div>É só chegar e curtir a experiência.</div></div>
-<div class="acoes"><a href="#" class="btn app"><i data-lucide="smartphone" class="ic "></i> Abrir o aplicativo</a><a href="#" class="btn out zap"><i data-lucide="message-circle" class="ic "></i> Assinar pelo WhatsApp</a></div>
+<div class="passos"><div>Baixe o AppBarber Cliente e procure Barbeirinho Barbearia.</div><div>Crie sua conta em poucos segundos.</div><div>Escolha o barbeiro, o dia e o horário.</div><div>É só chegar e curtir a experiência.</div></div>
+<div class="acoes"><a href="#" class="btn app"><i data-lucide="smartphone" class="ic "></i> Abrir o aplicativo</a><a href="#" class="btn out zap"><i data-lucide="message-circle" class="ic "></i> Tirar dúvidas no WhatsApp</a></div>
 </div>
-<div class="reveal"><div class="celular"><div class="tela">
-<small>Bom dia, membro</small><h3>O que vamos fazer hoje?</h3>
-<div class="atalhos"><div><i data-lucide="scissors" class="ic "></i>Agendar</div><div><i data-lucide="gift" class="ic "></i>Benefícios</div><div><i data-lucide="credit-card" class="ic "></i>Assinatura</div><div><i data-lucide="map-pin" class="ic "></i>Unidade</div></div>
-<div class="prox"><small style="color:#dfe5c4">Próximo horário</small><b>Sexta · 18:30</b>Corte + barba</div>
-</div></div></div>
+<div class="reveal"><div class="celular"><div class="tela" style="padding:0;background:url(img/app.png) top/cover"></div></div></div>
 </div></section>
 
 <section id="local" class="alt"><div class="wrap">
@@ -385,23 +383,26 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <h2 class="titulo reveal">Vem pra <em>cadeira.</em></h2><div class="linha"></div>
 <div class="local reveal">
 <div class="info">
-<div><small><i data-lucide="map-pin" class="ic "></i>Endereço</small>Tucumã · PA</div>
+<div><small><i data-lucide="map-pin" class="ic "></i>Endereço</small><a href="https://maps.app.goo.gl/aLeRQ8Mv7TY1HJq28" target="_blank">Av. dos Estados, 795, esquina com a Rua Castanhal · Centro, Tucumã · PA</a></div>
 <div><small><i data-lucide="clock" class="ic "></i>Horário</small>Segunda a sábado · 9h às 20h</div>
 <div><small><i data-lucide="phone" class="ic "></i>Contato</small><a href="#" class="zap">Chamar no WhatsApp</a></div>
 <div style="border:0"><small><i data-lucide="calendar" class="ic "></i>Agendamento</small><a href="#" class="app">Pelo aplicativo</a></div>
 </div>
-<iframe src="https://maps.google.com/maps?q=Tucum%C3%A3%20PA&z=13&output=embed" loading="lazy"></iframe>
+<a href="https://maps.app.goo.gl/aLeRQ8Mv7TY1HJq28" target="_blank" class="mapa"><iframe src="https://www.google.com/maps?q=Barbeirinho%20Barbearia%2C%20Av.%20dos%20Estados%2C%20795%20-%20Centro%2C%20Tucum%C3%A3%20-%20PA%2C%2068385-000&z=17&output=embed" loading="lazy" title="Mapa do Barbeirinho"></iframe></a>
 </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
 <div style="text-align:center"><span class="tag">Dúvidas frequentes</span><h2 class="titulo reveal" style="margin-bottom:50px">Ficou alguma <em>dúvida?</em></h2></div>
 <div class="faq">
-<div class="q"><button>Os cortes são ilimitados mesmo?</button><p>Sim. Dentro da assinatura você corta quantas vezes quiser no mês, conforme o plano escolhido.</p></div>
-<div class="q"><button>Como eu agendo e assino?</button><p>O agendamento é feito pelo nosso aplicativo, e a assinatura é fechada direto com a gente pelo WhatsApp.</p></div>
-<div class="q"><button>Como funciona o convidado VIP?</button><p>Todo mês você pode trazer um convidado que ainda não seja cliente cadastrado no Barberinho.</p></div>
-<div class="q"><button>Como uso os descontos dos parceiros?</button><p>Basta se identificar como membro do Clube Barberinho no parceiro para garantir o benefício.</p></div>
-<div class="q"><button>Tem desconto para começar?</button><p>Sim! Novos assinantes têm 15% de desconto nos três primeiros meses do plano.</p></div>
+<div class="q"><button>Qual a diferença entre Flex e Premium?</button><p>Cada linha tem regras de uso diferentes. Os detalhes completos de cada plano estão na aba Assinaturas do app.</p></div>
+<div class="q"><button>Como eu agendo e assino?</button><p>Tudo pelo app AppBarber Cliente, disponível para Android e iPhone. A assinatura é paga no cartão de crédito.</p></div>
+<div class="q"><button>Tem fidelidade?</button><p>Não. A assinatura pode ser cancelada a qualquer momento. Os termos e condições completos estão no app.</p></div>
+<div class="q"><button>Como funciona o convidado VIP?</button><p>Todo mês você pode trazer um convidado que ainda não seja cliente cadastrado no Barbeirinho.</p></div>
+<div class="q"><button>Como uso os descontos dos parceiros?</button><p>É só mostrar o aplicativo aberto na aba da sua assinatura no parceiro.</p></div>
+<div class="q"><button>Atende sem horário marcado?</button><p>Sim, fazemos encaixe. Mas agendando pelo app você garante seu horário.</p></div>
+<div class="q"><button>Atendem crianças?</button><p>Sim! A criançada também sai na régua.</p></div>
+<div class="q"><button>Quais formas de pagamento?</button><p>Na barbearia: dinheiro, Pix, débito e crédito. Assinaturas: somente cartão de crédito.</p></div>
 </div>
 </div></section>
 
@@ -413,12 +414,12 @@ footer a:hover{color:var(--claro);padding-left:4px}
 
 <footer><div class="wrap">
 <div class="cols">
-<div><a href="#" class="logo" style="color:var(--txt)"><span>B</span><div>BARBERINHO<small>BARBEARIA & CLUBE</small></div></a><p style="margin-top:18px;max-width:280px">Um lugar onde estilo & bons negócios andam juntos.</p></div>
-<div><h4>Navegação</h4><a href="#historia">História</a><a href="#clube">Clube</a><a href="#parceiros">Parceiros</a><a href="#faq">Dúvidas</a></div>
+<div><a href="#" class="logo"><img src="img/logo.svg" alt="Barbeirinho" style="height:90px"></a><p style="margin-top:18px;max-width:280px">Seu visual em dia, todo dia. Av. dos Estados, 795 · Centro, Tucumã · PA.</p></div>
+<div><h4>Navegação</h4><a href="#historia">História</a><a href="#servicos">Serviços</a><a href="#clube">Clube</a><a href="#parceiros">Parceiros</a><a href="#faq">Dúvidas</a></div>
 <div><h4>Unidade</h4><a href="#local">Tucumã · PA</a><a href="#" class="app">Agendar pelo app</a></div>
-<div><h4>Redes</h4><a href="#"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><a href="#" class="zap"><i data-lucide="message-circle" class="ic "></i> WhatsApp</a></div>
+<div><h4>Redes</h4><a href="https://instagram.com/barbeirinho_barbearia" target="_blank"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><a href="#" class="zap"><i data-lucide="message-circle" class="ic "></i> WhatsApp</a></div>
 </div>
-<div class="fim"><span>© 2026 Barbearia do Barberinho</span><span>Homens que lideram a própria vida.</span></div>
+<div class="fim"><span>© 2026 Barbeirinho Barbearia</span><span>Para homens que não aceitam o básico.</span></div>
 </div></footer>
 
 <a href="#" class="zap zapfix" title="WhatsApp"><svg viewBox="0 0 24 24" width="30" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.300 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
@@ -426,9 +427,12 @@ footer a:hover{color:var(--claro);padding-left:4px}
 
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script>
-// TROCAR pelos dados reais da barbearia
-const WHATS='5594999999999', APP='#';
-document.querySelectorAll('.zap').forEach(a=>{a.href='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Vim pelo site e quero saber mais sobre os planos do Clube Barberinho.');a.target='_blank'});
+
+const WHATS='5594992578677', IOS='https://apps.apple.com/br/app/appbarber-cliente/id6450795073';
+const APP=/iPhone|iPad|Mac/.test(navigator.userAgent)?IOS:'https://play.google.com/store/apps/details?id=br.com.starapp.appbarbercli';
+document.querySelectorAll('.tipo button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tipo button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+document.querySelectorAll('[data-flex]').forEach(s=>s.textContent='R$ '+s.dataset[b.dataset.t])});
+document.querySelectorAll('.zap').forEach(a=>{a.href='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Vim pelo site do Barbeirinho e queria tirar uma dúvida.');a.target='_blank'});
 document.querySelectorAll('.app').forEach(a=>{a.href=APP;a.target='_blank'});
 
 window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('fora'),500));
@@ -437,9 +441,6 @@ menu.onclick=()=>links.classList.toggle('on');
 links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('on'));
 
 document.querySelectorAll('.q button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('aberto'));
-document.querySelectorAll('.filtros button').forEach(b=>b.onclick=()=>{
-document.querySelectorAll('.filtros button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-document.querySelectorAll('.parc').forEach(p=>p.style.display=(b.dataset.f=='todos'||p.dataset.c==b.dataset.f)?'':'none')});
 
 document.querySelectorAll('.galeria img').forEach(i=>i.onclick=()=>{zoom.querySelector('img').src=i.src;zoom.style.display='grid'});
 zoom.onclick=()=>zoom.style.display='none';
