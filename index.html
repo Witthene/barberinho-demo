@@ -100,14 +100,13 @@ blockquote{font-weight:300;border-left:3px solid var(--verde2);padding:6px 0 6px
 .serv div{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(transparent,rgba(0,0,0,.95))}
 .serv h3{font-size:30px}
 .serv p{font-size:14px;color:#b9bcae}
-.tabela-tit{font-size:34px;margin:60px 0 24px}
-.tabela{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 40px}
-.tabela h4{font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;color:var(--verde2);margin:18px 0 6px}
-.tabela p{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:11px 0;border-bottom:1px solid var(--borda);font-size:15px}
-.tabela b{color:var(--claro);white-space:nowrap;text-align:right}
-.tabela small{grid-column:1/-1;color:#8d907f;font-size:12px}
-@media(max-width:900px){.tabela{grid-template-columns:1fr;gap:0}}
-
+.mais{margin-top:40px}.mais summary{list-style:none;margin:0 auto;display:flex;width:max-content}.mais summary::-webkit-details-marker{display:none}.mais[open] summary{margin-bottom:26px}
+.tabela{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;background:var(--preto);border:1px solid var(--borda);border-radius:18px;padding:10px 28px 22px}
+.tabela h4{font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;color:var(--verde2);margin:16px 0 2px}
+.tabela p{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px dashed var(--borda);font-size:14px}
+.tabela b{color:var(--claro);white-space:nowrap;font-weight:600}
+.tabela small{color:#8d907f;font-size:11px;white-space:nowrap}
+@media(max-width:900px){.tabela{grid-template-columns:1fr;padding:6px 20px 18px}}
 /* planos */
 .planos{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:960px;margin:auto}
 .plano{background:var(--preto);border:1px solid var(--borda);border-radius:22px;padding:44px;position:relative;transition:.4s}
@@ -293,45 +292,46 @@ footer a:hover{color:var(--claro);padding-left:4px}
 <div class="serv reveal"><img src="img/ig54.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="droplets" class="ic "></i><h3>Hidratação</h3><p>R$ 30 · 15 min</p></div></div>
 <div class="serv reveal"><img src="img/ig9.jpg" alt="Foto do Barbeirinho" loading="lazy"><div><i data-lucide="wand-sparkles" class="ic "></i><h3>Sobrancelha</h3><p>A partir de R$ 20 · 15 min</p></div></div>
 </div>
-<h3 class="tabela-tit reveal">Tabela completa</h3>
-<div class="tabela reveal">
+<details class="mais"><summary class="btn out">Ver todos os serviços e preços</summary>
+<div class="tabela">
 <div><h4>Cabelo</h4>
-<p><span>Corte</span><b>R$ 45</b><small>45 min</small></p>
-<p><span>Corte blindado</span><b>R$ 45</b><small>60 min</small></p>
-<p><span>Pezinho na navalha</span><b>R$ 10</b><small>15 min</small></p>
-<p><span>Penteado</span><b>R$ 20</b><small>15 min</small></p>
-<p><span>Pigmentação no cabelo</span><b>R$ 20</b><small>15 min</small></p>
-<p><span>Hidratação cabelo/barba</span><b>R$ 30</b><small>15 min</small></p>
-<p><span>Nutrição</span><b>R$ 35</b><small>15 min</small></p>
-<p><span>Manutenção de prótese</span><b>R$ 150</b><small>120 min</small></p></div>
+<p><span>Corte <small>45 min</small></span><b>R$ 45</b></p>
+<p><span>Corte blindado <small>60 min</small></span><b>R$ 45</b></p>
+<p><span>Pezinho na navalha <small>15 min</small></span><b>R$ 10</b></p>
+<p><span>Penteado <small>15 min</small></span><b>R$ 20</b></p>
+<p><span>Pigmentação no cabelo <small>15 min</small></span><b>R$ 20</b></p>
+<p><span>Hidratação cabelo/barba <small>15 min</small></span><b>R$ 30</b></p>
+<p><span>Nutrição <small>15 min</small></span><b>R$ 35</b></p>
+<p><span>Manutenção de prótese <small>120 min</small></span><b>R$ 150</b></p></div>
 <div><h4>Barba</h4>
-<p><span>Barba</span><b>R$ 40</b><small>45 min</small></p>
-<p><span>Barba express</span><b>R$ 20</b><small>15 min</small></p>
-<p><span>Pigmentação na barba</span><b>R$ 10</b><small>15 min</small></p>
-<p><span>Preenchimento de barba</span><b>a partir de R$ 430</b><small>180 min</small></p>
+<p><span>Barba <small>45 min</small></span><b>R$ 40</b></p>
+<p><span>Barba express <small>15 min</small></span><b>R$ 20</b></p>
+<p><span>Pigmentação na barba <small>15 min</small></span><b>R$ 10</b></p>
+<p><span>Preenchimento de barba <small>180 min</small></span><b>a partir de R$ 430</b></p>
 <h4>Química</h4>
-<p><span>Luzes</span><b>R$ 140</b><small>90 min</small></p>
-<p><span>Platinado</span><b>consultar</b><small>60 min</small></p>
-<p><span>Desondulação</span><b>consultar</b><small>90 min</small></p>
-<p><span>Desondulação no topete</span><b>R$ 60</b><small>15 min</small></p>
-<p><span>Relaxamento</span><b>a partir de R$ 40</b><small>30 min</small></p></div>
+<p><span>Luzes <small>90 min</small></span><b>R$ 140</b></p>
+<p><span>Platinado <small>60 min</small></span><b>consultar</b></p>
+<p><span>Desondulação <small>90 min</small></span><b>consultar</b></p>
+<p><span>Desondulação no topete <small>15 min</small></span><b>R$ 60</b></p>
+<p><span>Relaxamento <small>30 min</small></span><b>a partir de R$ 40</b></p></div>
 <div><h4>Rosto</h4>
-<p><span>Sobrancelha na navalha</span><b>R$ 20</b><small>15 min</small></p>
-<p><span>Sobrancelha na linha</span><b>R$ 35</b><small>15 min</small></p>
-<p><span>Depilação de ouvido</span><b>R$ 20</b><small>15 min</small></p>
-<p><span>Depilação nasal</span><b>R$ 20</b><small>15 min</small></p>
-<p><span>Cones hindu</span><b>R$ 50</b><small>15 min</small></p>
-<p><span>Limpeza de pele</span><b>R$ 40</b><small>15 min</small></p>
-<p><span>Limpeza de pele completa</span><b>R$ 60</b><small>60 min</small></p>
+<p><span>Sobrancelha na navalha <small>15 min</small></span><b>R$ 20</b></p>
+<p><span>Sobrancelha na linha <small>15 min</small></span><b>R$ 35</b></p>
+<p><span>Depilação de ouvido <small>15 min</small></span><b>R$ 20</b></p>
+<p><span>Depilação nasal <small>15 min</small></span><b>R$ 20</b></p>
+<p><span>Cones hindu <small>15 min</small></span><b>R$ 50</b></p>
+<p><span>Limpeza de pele <small>15 min</small></span><b>R$ 40</b></p>
+<p><span>Limpeza de pele completa <small>60 min</small></span><b>R$ 60</b></p>
 <h4>Combos</h4>
-<p><span>Barba e penteado</span><b>R$ 60</b><small>45 min</small></p>
-<p><span>Barba e sobrancelha (navalha)</span><b>R$ 60</b><small>75 min</small></p>
-<p><span>Barba e sobrancelha (linha)</span><b>R$ 75</b><small>60 min</small></p>
-<p><span>Corte e sobrancelha (navalha)</span><b>R$ 65</b><small>75 min</small></p>
-<p><span>Corte e sobrancelha (linha)</span><b>R$ 80</b><small>75 min</small></p>
-<p><span>Combo Presença: corte, máscara black, desondulação e sobrancelha</span><b>R$ 210</b><small>90 min</small></p>
-<p><span>Combo Presença com barba</span><b>R$ 250</b><small>90 min</small></p></div>
+<p><span>Barba e penteado <small>45 min</small></span><b>R$ 60</b></p>
+<p><span>Barba e sobrancelha (navalha) <small>75 min</small></span><b>R$ 60</b></p>
+<p><span>Barba e sobrancelha (linha) <small>60 min</small></span><b>R$ 75</b></p>
+<p><span>Corte e sobrancelha (navalha) <small>75 min</small></span><b>R$ 65</b></p>
+<p><span>Corte e sobrancelha (linha) <small>75 min</small></span><b>R$ 80</b></p>
+<p><span>Combo Presença: corte, máscara black, desondulação e sobrancelha <small>90 min</small></span><b>R$ 210</b></p>
+<p><span>Combo Presença com barba <small>90 min</small></span><b>R$ 250</b></p></div>
 </div>
+</details>
 <p class="aviso" style="text-align:left">No relaxamento, venha com o cabelo de 2 a 3 dias sem lavar para evitar ardência.</p>
 <p class="aviso" style="text-align:left"><b style="color:var(--claro)">Primeira vez aqui?</b> De segunda a quarta o corte sai por R$ 24,99 para quem vem ser atendido pela primeira vez. Pagamento em dinheiro, Pix, débito ou crédito.</p>
 </div></section>
