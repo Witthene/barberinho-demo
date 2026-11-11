@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0c0a">
+<title>Painel · Barbeirinho</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--preto:#0b0c0a;--preto2:#121410;--verde:#4b5320;--verde2:#6b7a3a;--claro:#c9d1a3;--txt:#e8e8e2;--cinza:#8a8d80;--borda:#262a1e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--txt);font-family:Manrope,sans-serif;padding-bottom:110px}
+h1,h2{font-family:'Bebas Neue';font-weight:400;letter-spacing:1px}
+.wrap{max-width:720px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:5;background:rgba(11,12,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+header img{height:40px}
+header a{color:var(--claro);font-size:13px;font-weight:600;text-decoration:none}
+#login{min-height:100vh;display:grid;place-items:center;text-align:center;padding:20px}
+#login img{width:180px;margin:0 auto 28px}
+#login h1{font-size:40px;margin-bottom:6px}
+#login p{color:var(--cinza);margin-bottom:24px}
+input,select{width:100%;background:var(--preto2);border:1px solid var(--borda);color:var(--txt);border-radius:12px;padding:14px;font:inherit;font-size:16px}
+input:focus{outline:2px solid var(--verde2);border-color:transparent}
+.btn{background:var(--verde);color:#fff;border:1px solid var(--verde2);border-radius:40px;padding:15px 26px;font:inherit;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;width:100%}
+.btn:disabled{opacity:.5}
+.btn.out{background:transparent;color:var(--claro);border-color:var(--borda);font-size:12px;padding:10px 16px;width:auto}
+.erro{color:#ff8a7f;margin-top:14px;min-height:22px;font-size:14px}
+details{background:var(--preto2);border:1px solid var(--borda);border-radius:16px;margin:16px 0;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:20px;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary h2{font-size:28px}summary small{display:block;color:var(--cinza);font-size:13px}
+summary:after{content:"+";font-size:28px;color:var(--verde2);transition:.3s}details[open] summary:after{transform:rotate(45deg)}
+.corpo{padding:0 20px 20px}
+label{display:block;font-size:12px;color:var(--cinza);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin:14px 0 6px}
+.linha{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.item{border:1px solid var(--borda);border-radius:14px;padding:14px;margin-top:12px;position:relative}
+.item h3{font-size:15px;color:var(--claro)}
+.svc{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;align-items:center;margin-top:8px}
+.svc input{padding:11px;font-size:15px}
+.x{background:none;border:1px solid var(--borda);color:#ff8a7f;border-radius:10px;width:40px;height:44px;font-size:18px;cursor:pointer}
+.fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.foto{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;border:1px solid var(--borda);background:#000;cursor:pointer}
+.foto.larga{aspect-ratio:16/9}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto span{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:18px 8px 8px;text-align:center}
+.foto.env:after{content:"Enviando...";position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.7);font-weight:800}
+.chave{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.chave input{width:52px;height:30px;accent-color:var(--verde2)}
+.dica{color:var(--cinza);font-size:13px;margin-top:10px}
+#barra{position:fixed;left:0;right:0;bottom:0;background:rgba(11,12,10,.95);backdrop-filter:blur(10px);border-top:1px solid var(--borda);padding:14px 0}
+#aviso{position:fixed;top:80px;left:50%;transform:translate(-50%,-20px);opacity:0;transition:.4s;background:var(--verde);border:1px solid var(--claro);padding:14px 22px;border-radius:40px;font-weight:600;z-index:10;text-align:center;width:max-content;max-width:90vw}
+#aviso.on{opacity:1;transform:translate(-50%,0)}#aviso.ruim{background:#6b2620}
+.oculto{display:none!important}
+@media(max-width:520px){.svc{grid-template-columns:1fr 1fr auto}.svc input:first-child{grid-column:1/-1}.fotos{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<section id="login">
+<div style="width:100%;max-width:340px">
+<img src="../img/logo.svg" alt="Barbeirinho">
+<h1>Painel do site</h1>
+<p>Altere preços e fotos do seu site.</p>
+<form id="flogin"><input type="password" id="senha" placeholder="Senha" autocomplete="current-password"><br><br><button class="btn">Entrar</button></form>
+<div class="erro" id="errologin"></div>
+</div>
+</section>
+
+<div id="app" class="oculto">
+<header><div class="wrap"><img src="../img/logo.svg" alt="Barbeirinho"><a href="../" target="_blank">Ver o site ↗</a></div></header>
+<div class="wrap" id="form"></div>
+<div id="barra"><div class="wrap"><button class="btn" id="salvar">Salvar alterações</button></div></div>
+</div>
+<div id="aviso"></div>
+<input type="file" id="arquivo" accept="image/*" class="oculto">
+
+<script>
+const API = 'https://barbeirinho-admin.arbeirinho-dmin.workers.dev';
+let token = sessionStorage.getItem('tk'), D = null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const src = (p) => (p && p.startsWith('data:') ? p : '../' + p);
+
+function aviso(t, ruim) { const a = $('#aviso'); a.textContent = t; a.className = 'on' + (ruim ? ' ruim' : ''); clearTimeout(a.t); a.t = setTimeout(() => (a.className = ''), 4000); }
+
+async function api(rota, corpo) {
+  const r = await fetch(API + rota, { method: corpo ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token }, body: corpo ? JSON.stringify(corpo) : undefined });
+  const j = await r.json().catch(() => ({}));
+  if (r.status == 401 && rota != '/login') { sessionStorage.removeItem('tk'); location.reload(); }
+  if (!r.ok) throw new Error(j.erro || 'Algo deu errado');
+  return j;
+}
+
+$('#flogin').onsubmit = async (e) => {
+  e.preventDefault(); $('#errologin').textContent = 'Entrando...';
+  try { token = (await api('/login', { senha: $('#senha').value })).token; sessionStorage.setItem('tk', token); abrir(); }
+  catch (er) { $('#errologin').textContent = er.message; }
+};
+
+async function abrir() {
+  $('#login').classList.add('oculto'); $('#app').classList.remove('oculto');
+  try { D = await api('/dados'); desenha(); } catch (e) { aviso(e.message, 1); }
+}
+
+function bloco(titulo, sub, html, aberto) { return `<details ${aberto ? 'open' : ''}><summary><div><h2>${titulo}</h2><small>${sub}</small></div></summary><div class="corpo">${html}</div></details>`; }
+function foto(caminho, chave, rot, larga) { return `<div class="foto ${larga ? 'larga' : ''}" data-k="${chave}"><img src="${esc(src(caminho))}" alt=""><span>${rot || 'Trocar'}</span></div>`; }
+function campo(rot, chave, val) { return `<label>${rot}</label><input data-k="${chave}" value="${esc(val)}">`; }
+
+function desenha() {
+  let h = '';
+  h += bloco('Promoção', 'Primeiro corte com preço especial', `
+    <div class="chave"><b>Mostrar no site</b><input type="checkbox" data-k="promo.ativa" ${D.promo.ativa ? 'checked' : ''}></div>
+    <div class="linha"><div>${campo('Preço', 'promo.preco', D.promo.preco)}</div><div>${campo('Dias', 'promo.dias', D.promo.dias)}</div></div>`, true);
+  h += bloco('Preços', 'Tabela completa de serviços', D.tabela.map((g, gi) => `<div class="item">${campo('Categoria', `tabela.${gi}.grupo`, g.grupo)}
+    ${g.itens.map((s, si) => `<div class="svc"><input data-k="tabela.${gi}.itens.${si}.nome" value="${esc(s.nome)}" placeholder="Serviço"><input data-k="tabela.${gi}.itens.${si}.tempo" value="${esc(s.tempo)}" placeholder="Duração"><input data-k="tabela.${gi}.itens.${si}.preco" value="${esc(s.preco)}" placeholder="Preço"><button class="x" data-rm="${gi}.${si}" title="Remover">×</button></div>`).join('')}
+    <br><button class="btn out" data-add="${gi}">+ Adicionar serviço</button></div>`).join(''));
+  h += bloco('Planos', 'Assinatura Flex e Premium (por mês)', D.planos.map((p, i) => `<div class="item"><h3>${esc(p.nome)}</h3><div class="linha"><div>${campo('Flex (R$)', `planos.${i}.flex`, p.flex)}</div><div>${campo('Premium (R$)', `planos.${i}.premium`, p.premium)}</div></div></div>`).join(''));
+  h += bloco('Destaques', 'Os 4 cards de serviço com foto', D.destaques.map((s, i) => `<div class="item"><div class="linha" style="grid-template-columns:110px 1fr;align-items:start"><div>${foto(s.foto, `destaques.${i}.foto`)}</div><div>${campo('Nome', `destaques.${i}.nome`, s.nome)}${campo('Preço', `destaques.${i}.preco`, s.preco)}${campo('Duração', `destaques.${i}.tempo`, s.tempo)}</div></div></div>`).join(''));
+  h += bloco('Fotos do topo', 'As 4 fotos que trocam no início do site', `<div class="fotos" style="grid-template-columns:1fr 1fr">${D.topo.map((f, i) => foto(f, `topo.${i}`, 'Foto ' + (i + 1), 1)).join('')}</div><p class="dica">Prefira fotos na horizontal, do ambiente ou da fachada.</p>`);
+  h += bloco('Galeria', '11 fotos do clima da casa', `<div class="fotos">${D.galeria.map((f, i) => foto(f, `galeria.${i}`, 'Foto ' + (i + 1))).join('')}</div><p class="dica">Toque numa foto para trocar.</p>`);
+  h += bloco('Antes e depois', 'Mesmo cliente, mesmo ângulo', `<div class="fotos" style="grid-template-columns:1fr 1fr">${foto(D.antesDepois.antes, 'antesDepois.antes', 'Antes')}${foto(D.antesDepois.depois, 'antesDepois.depois', 'Depois')}</div>`);
+  $('#form').innerHTML = h;
+}
+
+function set(k, v) { const p = k.split('.'); let o = D; p.slice(0, -1).forEach((x) => (o = o[x])); o[p.at(-1)] = v; }
+document.addEventListener('input', (e) => { const k = e.target.dataset.k; if (k) set(k, e.target.type == 'checkbox' ? e.target.checked : e.target.value); });
+document.addEventListener('click', (e) => {
+  const rm = e.target.dataset.rm, add = e.target.dataset.add, f = e.target.closest('.foto');
+  if (rm) { const [g, s] = rm.split('.'); D.tabela[g].itens.splice(s, 1); manterAberto(desenha); }
+  if (add) { D.tabela[add].itens.push({ nome: '', tempo: '15 min', preco: 'R$ ' }); manterAberto(desenha); }
+  if (f) { alvo = f; $('#arquivo').value = ''; $('#arquivo').click(); }
+});
+function manterAberto(fn) { const ab = [...document.querySelectorAll('details')].map((d) => d.open), y = scrollY; fn(); document.querySelectorAll('details').forEach((d, i) => (d.open = ab[i])); scrollTo(0, y); }
+
+let alvo = null, enviando = 0;
+$('#arquivo').onchange = async (e) => {
+  const arq = e.target.files[0], el = alvo; if (!arq) return;
+  el.classList.add('env'); enviando++;
+  try {
+    const img = await createImageBitmap(arq, { imageOrientation: 'from-image' });
+    const k = Math.min(1, 1600 / Math.max(img.width, img.height)), c = document.createElement('canvas');
+    c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    const url = c.toDataURL('image/jpeg', 0.86);
+    $('img', el).src = url;
+    const { caminho } = await api('/foto', { base64: url.split(',')[1] });
+    set(el.dataset.k, caminho); aviso('Foto enviada! Não esqueça de salvar.');
+  } catch (er) { aviso(er.message, 1); }
+  el.classList.remove('env'); enviando--;
+};
+
+$('#salvar').onclick = async () => {
+  if (enviando) return aviso('Espere as fotos terminarem de enviar', 1);
+  const b = $('#salvar'); b.disabled = true; b.textContent = 'Salvando...';
+  try { await api('/salvar', D); aviso('Salvo! O site atualiza em 1 ou 2 minutos.'); }
+  catch (e) { aviso(e.message, 1); }
+  b.disabled = false; b.textContent = 'Salvar alterações';
+};
+
+if (token) abrir();
+</script>
+</body>
+</html>
