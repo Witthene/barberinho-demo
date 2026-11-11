@@ -328,16 +328,19 @@ svg.ic *{stroke-dasharray:120;stroke-dashoffset:0}
 .ad input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
 .ad-rot{position:absolute;top:18px;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:30px;background:rgba(11,12,10,.7);backdrop-filter:blur(6px);pointer-events:none}
 .ad-r1{left:18px}.ad-r2{right:18px;background:var(--verde)}
-@media(max-width:980px){.ad-grid{grid-template-columns:1fr;gap:40px}.ad{margin:auto}}</style>
+@media(max-width:980px){.ad-grid{grid-template-columns:1fr;gap:40px}.ad{margin:auto}}/* correcoes da varredura */
+.titulo,.hero h1{padding-top:.14em;margin-top:-.14em}
+@media(max-width:980px){.galeria{grid-auto-flow:dense}}
+@media(max-width:600px){.rolar{display:none}.slides{bottom:18px}.hero{padding-bottom:60px}}</style>
 </head>
-<body><div id="prog"></div>
+<body><a href="#historia" class="pular">Pular para o conteúdo</a><div id="prog"></div>
 <div id="loader"><img src="img/logo.svg" alt="" style="width:220px;animation:pulsa 1s infinite alternate"></div>
 
 <header id="topo"><nav class="wrap">
 <a href="#" class="logo"><img src="img/logo.svg" alt="Barbeirinho" style="height:54px"></a>
 <div class="links" id="links"><a href="#historia">História</a><a href="#servicos">Serviços</a><a href="#clube">Clube</a><a href="#galeria">Galeria</a><a href="#app">App</a><a href="#local">Onde estamos</a></div>
 <a href="#" class="btn app">Agendar pelo app</a>
-<button class="menu" id="menu"><i data-lucide="menu" class="ic "></i></button>
+<button class="menu" id="menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="links"><i data-lucide="menu" class="ic "></i></button>
 </nav></header>
 
 <section class="hero"><div class="bg on" style="background-image:url(img/hero1.jpg)"></div><div class="bg" style="background-image:url(img/hero2.jpg)"></div><div class="bg" style="background-image:url(img/hero3.jpg)"></div><div class="bg" style="background-image:url(img/hero4.jpg)"></div><div class="slides"><button class="on" aria-label="Foto 1"></button><button aria-label="Foto 2"></button><button aria-label="Foto 3"></button><button aria-label="Foto 4"></button></div><div class="wrap">
@@ -570,13 +573,13 @@ svg.ic *{stroke-dasharray:120;stroke-dashoffset:0}
 <div><h4>Unidade</h4><a href="#local">Tucumã · PA</a><a href="#" class="app">Agendar pelo app</a></div>
 <div><h4>Redes</h4><a href="https://instagram.com/barbeirinho_barbearia" target="_blank"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><a href="#" class="zap"><i data-lucide="message-circle" class="ic "></i> WhatsApp</a></div>
 </div>
-<div class="fim"><span>© 2026 Barbeirinho Barbearia</span><span>Para homens que não aceitam o básico.</span></div>
+<div class="fim"><span>© 2026 Barbeirinho Barbearia · Av. dos Estados, 795, Centro, Tucumã · PA · <a href="privacidade.html">Política de Privacidade</a> · <button id="a11y-btn" aria-expanded="false" aria-controls="a11y">Acessibilidade</button></span><span>Para homens que não aceitam o básico.</span></div>
 </div></footer>
 
 <a href="#" class="zap zapfix" title="WhatsApp"><svg viewBox="0 0 24 24" width="30" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.300 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
-<div id="zoom"><img alt=""></div>
+<div id="zoom" role="dialog" aria-modal="true" aria-label="Foto ampliada" tabindex="-1"><img alt=""></div>
 
-<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="js/lucide.min.js"></script>
 <script>
 
 const WHATS='5594992578677', IOS='https://apps.apple.com/br/app/appbarber-cliente/id6450795073';
@@ -638,5 +641,65 @@ if(d.planos){var on=document.querySelector('.filtros.tipo .on'),tp=on?on.dataset
 (d.galeria||[]).forEach(function(f,i){var g=$('.galeria img')[i];if(g&&f)g.src=f});
 if(d.antesDepois){var a=document.querySelector('.ad-antes img'),b=document.querySelector('#ad>img');if(a&&d.antesDepois.antes)a.src=d.antesDepois.antes;if(b&&d.antesDepois.depois)b.src=d.antesDepois.depois}
 }).catch(function(){});
+</script><style>
+.pular{position:fixed;left:12px;top:-60px;z-index:999;background:var(--claro);color:#000;padding:10px 16px;border-radius:8px;font-weight:700;transition:top .2s}
+.pular:focus{top:12px}
+.galeria img:focus-visible{outline:3px solid var(--claro);outline-offset:4px}
+#a11y-btn{background:none;border:0;padding:0;color:inherit;font:inherit;text-decoration:underline;cursor:pointer}#a11y-btn:hover{color:var(--claro)}
+#a11y{position:fixed;left:14px;bottom:14px;z-index:300;background:#151515;border:1px solid #333;border-radius:14px;padding:14px;display:none;flex-direction:column;gap:8px;width:230px;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+#a11y.on{display:flex}
+#a11y b{color:#fff;font-size:15px;margin-bottom:4px}
+#a11y button{background:#222;color:#fff;border:1px solid #3a3a3a;border-radius:8px;padding:9px 10px;text-align:left;font-size:14px;cursor:pointer}
+#a11y button[aria-pressed="true"]{background:var(--claro);color:#000;font-weight:700}
+html.a-contraste body{background:#000!important;color:#fff!important}
+html.a-contraste *{text-shadow:none!important;box-shadow:none!important}
+html.a-contraste p,html.a-contraste li,html.a-contraste span,html.a-contraste small{color:#fff!important}
+html.a-contraste a{color:#ffeb3b!important}
+html.a-links a{text-decoration:underline!important}
+html.a-parado *,html.a-parado *:before,html.a-parado *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.a-parado .reveal{opacity:1!important;transform:none!important}
+html.a-legivel body,html.a-legivel *{font-family:Arial,Verdana,sans-serif!important;letter-spacing:.02em}
+</style>
+
+<div id="a11y" role="region" aria-label="Opções de acessibilidade">
+<b>Acessibilidade</b>
+<button data-fonte="1">A+ Aumentar texto</button>
+<button data-fonte="-1">A- Diminuir texto</button>
+<button data-a="contraste" aria-pressed="false">Alto contraste</button>
+<button data-a="links" aria-pressed="false">Sublinhar links</button>
+<button data-a="parado" aria-pressed="false">Parar animações</button>
+<button data-a="legivel" aria-pressed="false">Fonte mais legível</button>
+<button data-reset>Restaurar padrão</button>
+</div>
+<script>
+(function(){
+var H=document.documentElement,P=document.getElementById('a11y'),B=document.getElementById('a11y-btn');
+var S=JSON.parse(localStorage.getItem('a11y')||'{"f":0}');
+function aplica(){H.style.fontSize=S.f?(100+S.f*10)+'%':'';
+P.querySelectorAll('[data-a]').forEach(function(b){var k=b.dataset.a;H.classList.toggle('a-'+k,!!S[k]);b.setAttribute('aria-pressed',!!S[k])});
+localStorage.setItem('a11y',JSON.stringify(S))}
+B.onclick=function(){var o=P.classList.toggle('on');B.setAttribute('aria-expanded',o);if(o)P.querySelector('button').focus()};
+P.querySelectorAll('[data-fonte]').forEach(function(b){b.onclick=function(){S.f=Math.max(-2,Math.min(4,(S.f||0)+ +b.dataset.fonte));aplica()}});
+P.querySelectorAll('[data-a]').forEach(function(b){b.onclick=function(){S[b.dataset.a]=!S[b.dataset.a];aplica()}});
+P.querySelector('[data-reset]').onclick=function(){S={f:0};aplica()};
+aplica();
+// menu
+var m=document.getElementById('menu'),l=document.getElementById('links');
+m.addEventListener('click',function(){m.setAttribute('aria-expanded',l.classList.contains('on'))});
+// FAQ
+document.querySelectorAll('.q button').forEach(function(b){b.setAttribute('aria-expanded','false');b.addEventListener('click',function(){b.setAttribute('aria-expanded',b.parentElement.classList.contains('aberto'))})});
+// galeria pelo teclado
+var z=document.getElementById('zoom'),ult=null;
+document.querySelectorAll('.galeria img').forEach(function(i,n){i.tabIndex=0;i.setAttribute('role','button');i.setAttribute('aria-label','Ampliar foto '+(n+1)+' da galeria');
+i.addEventListener('click',function(){ult=i;z.querySelector('img').alt=i.alt;setTimeout(function(){z.focus()},0)});
+i.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();i.click()}})});
+function fecha(){z.style.display='none';if(ult)ult.focus()}
+z.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();fecha()}});
+z.addEventListener('click',function(){if(ult)ult.focus()});
+document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;
+if(z.style.display==='grid')fecha();
+else if(P.classList.contains('on')){P.classList.remove('on');B.setAttribute('aria-expanded','false');B.focus()}
+else if(l.classList.contains('on')){l.classList.remove('on');m.setAttribute('aria-expanded','false');m.focus()}});
+})();
 </script></body>
 </html>
