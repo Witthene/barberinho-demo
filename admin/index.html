@@ -110,6 +110,17 @@ function campo(rot, chave, val) { return `<label>${rot}</label><input data-k="${
 
 function desenha() {
   let h = '';
+  D.funcionamento = D.funcionamento || { modo: 'auto', mensagem: '' };
+  const fm = D.funcionamento.modo;
+  h += bloco('Funcionamento', 'Aberto ou fechado no site', `
+    <label>Status no site</label>
+    <select data-k="funcionamento.modo">
+      <option value="auto" ${fm == 'auto' ? 'selected' : ''}>Automático pelo horário (seg a sáb, 9h às 20h)</option>
+      <option value="aberto" ${fm == 'aberto' ? 'selected' : ''}>Sempre aberto</option>
+      <option value="fechado" ${fm == 'fechado' ? 'selected' : ''}>Fechado</option>
+    </select>
+    ${campo('Mensagem (opcional)', 'funcionamento.mensagem', D.funcionamento.mensagem)}
+    <p class="dica">Ex.: "fechado hoje, feriado". Lembre de voltar para Automático depois.</p>`, true);
   h += bloco('Promoção', 'Primeiro corte com preço especial', `
     <div class="chave"><b>Mostrar no site</b><input type="checkbox" data-k="promo.ativa" ${D.promo.ativa ? 'checked' : ''}></div>
     <div class="linha"><div>${campo('Preço', 'promo.preco', D.promo.preco)}</div><div>${campo('Dias', 'promo.dias', D.promo.dias)}</div></div>`, true);

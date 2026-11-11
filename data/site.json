@@ -1,4 +1,5 @@
 {
+  "funcionamento": { "modo": "auto", "mensagem": "" },
   "promo": { "ativa": true, "preco": "R$ 24,99", "dias": "seg a qua" },
   "topo": ["img/hero1.jpg", "img/hero2.jpg", "img/hero3.jpg", "img/hero4.jpg"],
   "destaques": [

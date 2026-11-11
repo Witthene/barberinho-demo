@@ -619,9 +619,9 @@ var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInte
 if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.plano,.bem').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.classList.add('tilt');c.style.transform='perspective(900px) rotateX('+(-y*6)+'deg) rotateY('+(x*6)+'deg) translateY(-6px)'});c.addEventListener('mouseleave',function(){c.classList.remove('tilt');c.style.transform=''})});
 })();
 </script><script>
-(function(){function upd(){var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Belem',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});var dias=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],d=dias.indexOf(o.weekday),m=(+o.hour%24)*60+(+o.minute),ab=9*60,fe=20*60,aberto=d>=1&&d<=6&&m>=ab&&m<fe,txt;
+(function(){function upd(){var fx=window.stFixo;if(fx&&fx.modo&&fx.modo!="auto"){var ab=fx.modo=="aberto",h="<b>"+(ab?"Aberto agora":"Fechado")+"</b>"+(fx.mensagem?"<span>"+String(fx.mensagem).replace(/[<>&]/g,"")+"</span>":"");document.querySelectorAll(".status").forEach(function(s){s.innerHTML=h;s.classList.toggle("aberto",ab)});return}var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Belem',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});var dias=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],d=dias.indexOf(o.weekday),m=(+o.hour%24)*60+(+o.minute),ab=9*60,fe=20*60,aberto=d>=1&&d<=6&&m>=ab&&m<fe,txt;
 if(aberto){var r=fe-m;txt='<b>Aberto agora</b><span>'+(r<=60?'fecha em '+r+' min':'até as 20h')+'</span>'}else{var prox=(d>=1&&d<=6&&m<ab)?'hoje às 9h':(d==6||d==0)?(d==6?'segunda às 9h':'amanhã às 9h'):'amanhã às 9h';txt='<b>Fechado</b><span>abre '+prox+'</span>'}
-document.querySelectorAll('.status').forEach(function(s){s.innerHTML=txt;s.classList.toggle('aberto',aberto)})}upd();setInterval(upd,60000)})();
+document.querySelectorAll('.status').forEach(function(s){s.innerHTML=txt;s.classList.toggle('aberto',aberto)})}window.updStatus=upd;upd();setInterval(upd,60000)})();
 </script><script>
 (function(){var ad=document.getElementById('ad');if(!ad)return;var r=ad.querySelector('input');r.addEventListener('input',function(){ad.style.setProperty('--p',r.value+'%')});
 var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();var t0=null;function an(ts){if(!t0)t0=ts;var k=(ts-t0)/2200;if(k>1){ad.style.setProperty('--p','50%');return}var v=50+Math.sin(k*Math.PI*2)*30;ad.style.setProperty('--p',v+'%');requestAnimationFrame(an)}setTimeout(function(){requestAnimationFrame(an)},700)}},{threshold:.5});io.observe(ad)})();
@@ -629,6 +629,7 @@ var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnec
 /* dados editáveis pelo painel (data/site.json) */
 fetch('data/site.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
 var $=function(s){return document.querySelectorAll(s)},esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+if(d.funcionamento){window.stFixo=d.funcionamento;if(window.updStatus)window.updStatus()}
 if(d.promo){$('.promo').forEach(function(a){a.style.display=d.promo.ativa?'':'none';a.querySelector('.promo-txt').innerHTML='Primeiro corte de '+esc(d.promo.dias)+' por <b>'+esc(d.promo.preco)+'</b>'})}
 (d.topo||[]).forEach(function(f,i){var b=$('.hero .bg')[i];if(b&&f)b.style.backgroundImage='url("'+f+'")'});
 (d.destaques||[]).forEach(function(s,i){var c=$('.serv')[i];if(!c)return;if(s.foto)c.querySelector('img').src=s.foto;c.querySelector('h3').textContent=s.nome;c.querySelector('p').textContent=s.preco+' · '+s.tempo});
