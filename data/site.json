@@ -1,6 +1,6 @@
 {
   "promo": {
-    "ativa": false,
+    "ativa": true,
     "preco": "R$ 24,99",
     "dias": "seg a qua"
   },
@@ -201,5 +201,9 @@
   "antesDepois": {
     "antes": "img/antes.jpg",
     "depois": "img/depois.jpg"
+  },
+  "funcionamento": {
+    "modo": "auto",
+    "mensagem": ""
   }
 }
