@@ -432,7 +432,7 @@ const WHATS='5594992578677', IOS='https://apps.apple.com/br/app/appbarber-client
 const APP=/iPhone|iPad|Mac/.test(navigator.userAgent)?IOS:'https://play.google.com/store/apps/details?id=br.com.starapp.appbarbercli';
 document.querySelectorAll('.tipo button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tipo button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
 document.querySelectorAll('[data-flex]').forEach(s=>s.textContent='R$ '+s.dataset[b.dataset.t])});
-document.querySelectorAll('.zap').forEach(a=>{a.href='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Vim pelo site do Barbeirinho e queria tirar uma dúvida.');a.target='_blank'});
+document.querySelectorAll('.zap').forEach(a=>{a.href='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Vim pelo site do Barbeirinho e gostaria de agendar um horário.');a.target='_blank'});
 document.querySelectorAll('.app').forEach(a=>{a.href=APP;a.target='_blank'});
 
 window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('fora'),500));
