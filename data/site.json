@@ -1,6 +1,6 @@
 {
   "promo": {
-    "ativa": true,
+    "ativa": false,
     "preco": "R$ 24,99",
     "dias": "seg a qua"
   },
@@ -199,7 +199,8 @@
     "img/g11.jpg"
   ],
   "historia": [
-    "img/fd3.jpg","img/hist1.mp4"
+    "img/fd3.jpg",
+    "img/hist1.mp4"
   ],
   "parceiros": [
     {
