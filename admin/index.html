@@ -6,84 +6,150 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b0c0a">
 <title>Painel · Barbeirinho</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icone-32.png"><link rel="icon" type="image/png" sizes="512x512" href="../img/icone.png"><link rel="apple-touch-icon" href="../img/icone-apple.png">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--preto:#0b0c0a;--preto2:#121410;--verde:#4b5320;--verde2:#6b7a3a;--claro:#c9d1a3;--txt:#e8e8e2;--cinza:#8a8d80;--borda:#262a1e}
+:root{--preto:#0b0c0a;--preto2:#121410;--preto3:#181b14;--verde:#4b5320;--verde2:#6b7a3a;--claro:#c9d1a3;--txt:#e8e8e2;--cinza:#8a8d80;--borda:#262a1e}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--txt);font-family:Manrope,sans-serif;padding-bottom:110px}
+body{background:radial-gradient(1200px 600px at 50% -200px,#1c2112,transparent),var(--preto);background-attachment:fixed;color:var(--txt);font-family:Manrope,sans-serif;padding-bottom:120px;-webkit-tap-highlight-color:transparent}
 h1,h2{font-family:'Bebas Neue';font-weight:400;letter-spacing:1px}
-.wrap{max-width:720px;margin:auto;padding:0 18px}
-header{position:sticky;top:0;z-index:5;background:rgba(11,12,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda)}
+.wrap{max-width:760px;margin:auto;padding:0 18px}
+svg.lucide{width:20px;height:20px;stroke-width:2}
+header{position:sticky;top:0;z-index:5;background:rgba(11,12,10,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--borda)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 header img{height:40px}
-header a{color:var(--claro);font-size:13px;font-weight:600;text-decoration:none}
+header nav{display:flex;gap:8px}
+header a,header button{display:flex;align-items:center;gap:6px;color:var(--claro);font:inherit;font-size:13px;font-weight:600;text-decoration:none;background:var(--preto2);border:1px solid var(--borda);border-radius:30px;padding:8px 14px;cursor:pointer}
+header a:hover,header button:hover{border-color:var(--verde2)}
+header svg.lucide{width:16px;height:16px}
+.ola{padding:34px 0 8px}
+.ola h1{font-size:46px;line-height:1}.ola h1 em{font-style:normal;color:var(--verde2)}
+.ola p{color:var(--cinza);margin-top:6px}
 #login{min-height:100vh;display:grid;place-items:center;text-align:center;padding:20px}
-#login img{width:180px;margin:0 auto 28px}
+#login .card{width:100%;max-width:360px;background:rgba(18,20,16,.8);border:1px solid var(--borda);border-radius:24px;padding:36px 28px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+#login img{width:160px;margin:0 auto 24px}
 #login h1{font-size:40px;margin-bottom:6px}
 #login p{color:var(--cinza);margin-bottom:24px}
-input,select{width:100%;background:var(--preto2);border:1px solid var(--borda);color:var(--txt);border-radius:12px;padding:14px;font:inherit;font-size:16px}
-input:focus{outline:2px solid var(--verde2);border-color:transparent}
-.btn{background:var(--verde);color:#fff;border:1px solid var(--verde2);border-radius:40px;padding:15px 26px;font:inherit;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;width:100%}
+input,select{width:100%;background:var(--preto);border:1px solid var(--borda);color:var(--txt);border-radius:12px;padding:13px 14px;font:inherit;font-size:16px;transition:border-color .2s}
+input:hover,select:hover{border-color:#353b29}
+input:focus,select:focus{outline:none;border-color:var(--verde2);box-shadow:0 0 0 3px rgba(107,122,58,.25)}
+input[type=range]{padding:0;border:0;background:none;accent-color:var(--verde2);height:28px;box-shadow:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,#56602a,var(--verde));color:#fff;border:1px solid var(--verde2);border-radius:40px;padding:15px 26px;font:inherit;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;width:100%;transition:.2s}
+.btn:hover{filter:brightness(1.12)}
 .btn:disabled{opacity:.5}
 .btn.out{background:transparent;color:var(--claro);border-color:var(--borda);font-size:12px;padding:10px 16px;width:auto}
+.btn.out:hover{border-color:var(--verde2)}
+.btn.perigo{color:#ff8a7f}
 .erro{color:#ff8a7f;margin-top:14px;min-height:22px;font-size:14px}
-details{background:var(--preto2);border:1px solid var(--borda);border-radius:16px;margin:16px 0;overflow:hidden}
-summary{list-style:none;cursor:pointer;padding:20px;display:flex;justify-content:space-between;align-items:center}
+details{background:linear-gradient(180deg,var(--preto3),var(--preto2));border:1px solid var(--borda);border-radius:18px;margin:14px 0;overflow:hidden;transition:border-color .3s}
+details[open]{border-color:#343a27}
+summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;gap:14px;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary h2{font-size:28px}summary small{display:block;color:var(--cinza);font-size:13px}
-summary:after{content:"+";font-size:28px;color:var(--verde2);transition:.3s}details[open] summary:after{transform:rotate(45deg)}
-.corpo{padding:0 20px 20px}
-label{display:block;font-size:12px;color:var(--cinza);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin:14px 0 6px}
+summary .ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(75,83,32,.35);color:var(--claro);border:1px solid rgba(107,122,58,.4)}
+summary > div:nth-child(2){flex:1}
+summary h2{font-size:26px;line-height:1.1}summary small{display:block;color:var(--cinza);font-size:13px}
+summary:after{content:"";width:10px;height:10px;border-right:2px solid var(--verde2);border-bottom:2px solid var(--verde2);transform:rotate(45deg);transition:.3s;margin-right:6px}
+details[open] summary:after{transform:rotate(-135deg)}
+.corpo{padding:4px 20px 20px;border-top:1px solid var(--borda)}
+label{display:block;font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin:14px 0 6px}
 .linha{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.item{border:1px solid var(--borda);border-radius:14px;padding:14px;margin-top:12px;position:relative}
+.item{background:rgba(0,0,0,.25);border:1px solid var(--borda);border-radius:14px;padding:14px;margin-top:12px;position:relative}
 .item h3{font-size:15px;color:var(--claro)}
 .svc{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;align-items:center;margin-top:8px}
 .svc input{padding:11px;font-size:15px}
 .x{background:none;border:1px solid var(--borda);color:#ff8a7f;border-radius:10px;width:40px;height:44px;font-size:18px;cursor:pointer}
-.fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.foto{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;border:1px solid var(--borda);background:#000;cursor:pointer}
+.x:hover{border-color:#ff8a7f}
+.fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.foto{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;border:1px solid var(--borda);background:#000;cursor:pointer;transition:border-color .2s,transform .2s}
+.foto:hover{border-color:var(--verde2);transform:translateY(-2px)}
 .foto.larga{aspect-ratio:16/9}
-.foto img{width:100%;height:100%;object-fit:cover}
-.foto span{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:18px 8px 8px;text-align:center}
+.foto img,.foto video{width:100%;height:100%;object-fit:cover;display:block}
+.foto span{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:18px 8px 8px;text-align:center;pointer-events:none}
+.foto .ajustar{position:absolute;top:6px;right:6px;display:flex;align-items:center;gap:4px;background:rgba(11,12,10,.8);backdrop-filter:blur(6px);color:var(--claro);border:1px solid var(--verde2);border-radius:20px;padding:5px 9px;font:inherit;font-size:11px;font-weight:800;cursor:pointer}
+.foto .ajustar svg{width:13px;height:13px}
+.foto .ajustar:hover{background:var(--verde)}
+.foto.vazia{display:grid;place-items:center;border-style:dashed}
 .foto.env:after{content:"Enviando...";position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.7);font-weight:800}
-.chave{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
-.chave input{width:52px;height:30px;accent-color:var(--verde2)}
+.chave{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;background:rgba(0,0,0,.25);border:1px solid var(--borda);border-radius:12px;padding:12px 14px}
+.chave input{width:52px;height:28px;accent-color:var(--verde2)}
 .dica{color:var(--cinza);font-size:13px;margin-top:10px}
-#barra{position:fixed;left:0;right:0;bottom:0;background:rgba(11,12,10,.95);backdrop-filter:blur(10px);border-top:1px solid var(--borda);padding:14px 0}
-#aviso{position:fixed;top:80px;left:50%;transform:translate(-50%,-20px);opacity:0;transition:.4s;background:var(--verde);border:1px solid var(--claro);padding:14px 22px;border-radius:40px;font-weight:600;z-index:10;text-align:center;width:max-content;max-width:90vw}
+.acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+#barra{position:fixed;left:0;right:0;bottom:0;background:rgba(11,12,10,.92);backdrop-filter:blur(12px);border-top:1px solid var(--borda);padding:12px 0;transform:translateY(0);transition:.3s}
+#barra .wrap{display:flex;align-items:center;gap:14px}
+#estado{flex:none;font-size:13px;color:var(--cinza);display:flex;align-items:center;gap:8px}
+#estado:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--verde2)}
+#estado.sujo{color:var(--claro)}#estado.sujo:before{background:#e0b341;box-shadow:0 0 10px #e0b341}
+#aviso{position:fixed;top:80px;left:50%;transform:translate(-50%,-20px);opacity:0;transition:.4s;background:var(--verde);border:1px solid var(--claro);padding:14px 22px;border-radius:40px;font-weight:600;z-index:30;text-align:center;width:max-content;max-width:90vw;pointer-events:none}
 #aviso.on{opacity:1;transform:translate(-50%,0)}#aviso.ruim{background:#6b2620}
 .oculto{display:none!important}
-@media(max-width:520px){.svc{grid-template-columns:1fr 1fr auto}.svc input:first-child{grid-column:1/-1}.fotos{grid-template-columns:repeat(2,1fr)}}
+/* editor de recorte */
+#edit{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);display:grid;place-items:center;padding:14px}
+#edit .caixa{width:100%;max-width:560px;max-height:100%;overflow:auto;background:var(--preto2);border:1px solid var(--borda);border-radius:20px;padding:20px}
+#edit h2{font-size:30px}
+#edit .sub{color:var(--cinza);font-size:13px;margin-bottom:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chips button{background:none;border:1px solid var(--borda);color:var(--txt);border-radius:20px;padding:7px 13px;font:inherit;font-size:13px;cursor:pointer}
+.chips button.on{background:var(--verde);border-color:var(--verde2)}
+#palco{display:grid;place-items:center;background:repeating-conic-gradient(#151713 0 25%,#0f110d 0 50%) 0 0/20px 20px;border-radius:12px;padding:10px}
+#cv,#vquadro{display:block;border-radius:8px;outline:2px solid var(--claro);touch-action:none;cursor:grab;box-shadow:0 0 0 9999px rgba(0,0,0,.35)}
+#cv:active,#vquadro:active{cursor:grabbing}
+#vquadro{overflow:hidden;position:relative}
+#vquadro video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.faixa-tempo{display:flex;justify-content:space-between;font-size:12px;color:var(--cinza);margin-top:-2px}
+@media(max-width:520px){.svc{grid-template-columns:1fr 1fr auto}.svc input:first-child{grid-column:1/-1}.fotos{grid-template-columns:repeat(2,1fr)}.ola h1{font-size:38px}#estado span{display:none}}
 </style>
 </head>
 <body>
 
 <section id="login">
-<div style="width:100%;max-width:340px">
+<div class="card">
 <img src="../img/logo.svg" alt="Barbeirinho">
 <h1>Painel do site</h1>
-<p>Altere preços e fotos do seu site.</p>
+<p>Altere preços, fotos e vídeos do seu site.</p>
 <form id="flogin"><input type="password" id="senha" placeholder="Senha" autocomplete="current-password"><br><br><button class="btn">Entrar</button></form>
 <div class="erro" id="errologin"></div>
 </div>
 </section>
 
 <div id="app" class="oculto">
-<header><div class="wrap"><img src="../img/logo.svg" alt="Barbeirinho"><a href="../" target="_blank">Ver o site ↗</a></div></header>
-<div class="wrap" id="form"></div>
-<div id="barra"><div class="wrap"><button class="btn" id="salvar">Salvar alterações</button></div></div>
+<header><div class="wrap"><img src="../img/logo.svg" alt="Barbeirinho"><nav><a href="../" target="_blank"><i data-lucide="external-link"></i>Ver o site</a><button id="sair"><i data-lucide="log-out"></i>Sair</button></nav></div></header>
+<div class="wrap">
+<div class="ola"><h1>Painel do <em>Barbeirinho.</em></h1><p>Toque numa seção para abrir. Nas fotos, toque para trocar ou em Ajustar para recortar.</p></div>
+<div id="form"></div>
 </div>
+<div id="barra"><div class="wrap"><div id="estado"><span>Tudo salvo</span></div><button class="btn" id="salvar"><i data-lucide="save"></i>Salvar alterações</button></div></div>
+</div>
+
+<div id="edit" class="oculto"><div class="caixa">
+<h2 id="etit">Ajustar</h2>
+<p class="sub" id="esub">Arraste para enquadrar.</p>
+<div class="chips" id="razoes"></div>
+<div id="palco"><canvas id="cv"></canvas><div id="vquadro" class="oculto"><video id="vv" muted playsinline loop autoplay></video></div></div>
+<div id="cimg"><label>Zoom</label><input type="range" id="zoom" min="1" max="4" step="0.01" value="1"></div>
+<div id="cvid" class="oculto">
+<label>Começa em <b id="li">0s</b></label><input type="range" id="vini" min="0" step="0.1" value="0">
+<label>Termina em <b id="lf">0s</b></label><input type="range" id="vfim" min="0" step="0.1" value="0">
+<p class="dica">O vídeo fica repetindo só o trecho escolhido.</p>
+</div>
+<div class="acoes" style="justify-content:flex-end"><button class="btn out" id="ecanc">Cancelar</button><button class="btn" id="eok" style="width:auto"><i data-lucide="check"></i>Usar</button></div>
+</div></div>
+
 <div id="aviso"></div>
 <input type="file" id="arquivo" accept="image/*" class="oculto">
 
+<script src="../js/lucide.min.js"></script>
 <script>
 const API = 'https://barbeirinho-admin.arbeirinho-dmin.workers.dev';
-let token = sessionStorage.getItem('tk'), D = null;
+let token = sessionStorage.getItem('tk'), D = null, sujo = false;
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const src = (p) => (p && p.startsWith('data:') ? p : '../' + p);
+const src = (p) => (!p ? 'data:image/gif;base64,R0lGODlhAQABAAAAACw=' : /^(data|blob):/.test(p) ? p : '../' + p);
+const icones = () => window.lucide && lucide.createIcons();
+icones();
 
 function aviso(t, ruim) { const a = $('#aviso'); a.textContent = t; a.className = 'on' + (ruim ? ' ruim' : ''); clearTimeout(a.t); a.t = setTimeout(() => (a.className = ''), 4000); }
+function marcar(v) { sujo = v; $('#estado').className = v ? 'sujo' : ''; $('#estado span').textContent = v ? 'Alterações não salvas' : 'Tudo salvo'; }
+addEventListener('beforeunload', (e) => { if (sujo) e.preventDefault(); });
 
 async function api(rota, corpo) {
   const r = await fetch(API + rota, { method: corpo ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token }, body: corpo ? JSON.stringify(corpo) : undefined });
@@ -98,21 +164,33 @@ $('#flogin').onsubmit = async (e) => {
   try { token = (await api('/login', { senha: $('#senha').value })).token; sessionStorage.setItem('tk', token); abrir(); }
   catch (er) { $('#errologin').textContent = er.message; }
 };
+$('#sair').onclick = () => { if (sujo && !confirm('Sair sem salvar?')) return; sujo = false; sessionStorage.removeItem('tk'); location.reload(); };
 
 async function abrir() {
   $('#login').classList.add('oculto'); $('#app').classList.remove('oculto');
   try { D = await api('/dados'); desenha(); } catch (e) { aviso(e.message, 1); }
 }
 
-function bloco(titulo, sub, html, aberto) { return `<details ${aberto ? 'open' : ''}><summary><div><h2>${titulo}</h2><small>${sub}</small></div></summary><div class="corpo">${html}</div></details>`; }
-function foto(caminho, chave, rot, larga) { return `<div class="foto ${larga ? 'larga' : ''}" data-k="${chave}"><img src="${esc(src(caminho))}" alt=""><span>${rot || 'Trocar'}</span></div>`; }
+// proporção de cada lugar do site (0 = livre)
+const RAZAO = { topo: 16 / 9, destaques: 2 / 3, historia: 4 / 5, antesDepois: 4 / 5, parceiros: 16 / 10, galeria: 0 };
+const razaoDe = (k) => RAZAO[k.split('.')[0]] ?? 0;
+// vídeos guardam enquadramento e trecho depois do #: img/x.mp4#p=50,30&t=1.5,7
+const partes = (p) => { const [base, frag = ''] = String(p || '').split('#'); return { base, q: new URLSearchParams(frag) }; };
+const ehVideo = (p) => /\.(mp4|webm|mov)$/i.test(partes(p).base);
+
+function bloco(ico, titulo, sub, html, aberto) { return `<details ${aberto ? 'open' : ''}><summary><div class="ico"><i data-lucide="${ico}"></i></div><div><h2>${titulo}</h2><small>${sub}</small></div></summary><div class="corpo">${html}</div></details>`; }
+function foto(caminho, chave, rot, larga, video) {
+  const { base, q } = partes(caminho), pos = (q.get('p') || '50,50').split(',');
+  const midia = !base ? `<i data-lucide="image-plus"></i>` : ehVideo(base) ? `<video src="${esc(src(base))}" muted autoplay loop playsinline style="object-position:${+pos[0]}% ${+pos[1]}%"></video>` : `<img src="${esc(src(base))}" alt="">`;
+  return `<div class="foto ${larga ? 'larga' : ''} ${base ? '' : 'vazia'}" data-k="${chave}" ${video ? 'data-video="1"' : ''}>${midia}<span>${rot || 'Trocar'}</span>${base ? '<button class="ajustar" type="button"><i data-lucide="crop"></i>Ajustar</button>' : ''}</div>`;
+}
 function campo(rot, chave, val) { return `<label>${rot}</label><input data-k="${chave}" value="${esc(val)}">`; }
 
 function desenha() {
   let h = '';
   D.funcionamento = D.funcionamento || { modo: 'auto', mensagem: '' };
   const fm = D.funcionamento.modo;
-  h += bloco('Funcionamento', 'Aberto ou fechado no site', `
+  h += bloco('clock', 'Funcionamento', 'Aberto ou fechado no site', `
     <label>Status no site</label>
     <select data-k="funcionamento.modo">
       <option value="auto" ${fm == 'auto' ? 'selected' : ''}>Automático pelo horário (seg a sáb, 9h às 20h)</option>
@@ -121,53 +199,186 @@ function desenha() {
     </select>
     ${campo('Mensagem (opcional)', 'funcionamento.mensagem', D.funcionamento.mensagem)}
     <p class="dica">Ex.: "fechado hoje, feriado". Lembre de voltar para Automático depois.</p>`, true);
-  h += bloco('Promoção', 'Primeiro corte com preço especial', `
+  h += bloco('badge-percent', 'Promoção', 'Primeiro corte com preço especial', `
     <div class="chave"><b>Mostrar no site</b><input type="checkbox" data-k="promo.ativa" ${D.promo.ativa ? 'checked' : ''}></div>
-    <div class="linha"><div>${campo('Preço', 'promo.preco', D.promo.preco)}</div><div>${campo('Dias', 'promo.dias', D.promo.dias)}</div></div>`, true);
-  h += bloco('Preços', 'Tabela completa de serviços', D.tabela.map((g, gi) => `<div class="item">${campo('Categoria', `tabela.${gi}.grupo`, g.grupo)}
+    <div class="linha"><div>${campo('Preço', 'promo.preco', D.promo.preco)}</div><div>${campo('Dias', 'promo.dias', D.promo.dias)}</div></div>`);
+  h += bloco('list', 'Preços', 'Tabela completa de serviços', D.tabela.map((g, gi) => `<div class="item">${campo('Categoria', `tabela.${gi}.grupo`, g.grupo)}
     ${g.itens.map((s, si) => `<div class="svc"><input data-k="tabela.${gi}.itens.${si}.nome" value="${esc(s.nome)}" placeholder="Serviço"><input data-k="tabela.${gi}.itens.${si}.tempo" value="${esc(s.tempo)}" placeholder="Duração"><input data-k="tabela.${gi}.itens.${si}.preco" value="${esc(s.preco)}" placeholder="Preço"><button class="x" data-rm="${gi}.${si}" title="Remover">×</button></div>`).join('')}
-    <br><button class="btn out" data-add="${gi}">+ Adicionar serviço</button></div>`).join(''));
-  h += bloco('Planos', 'Assinatura Flex e Premium (por mês)', D.planos.map((p, i) => `<div class="item"><h3>${esc(p.nome)}</h3><div class="linha"><div>${campo('Flex (R$)', `planos.${i}.flex`, p.flex)}</div><div>${campo('Premium (R$)', `planos.${i}.premium`, p.premium)}</div></div></div>`).join(''));
-  h += bloco('Destaques', 'Os 4 cards de serviço com foto', D.destaques.map((s, i) => `<div class="item"><div class="linha" style="grid-template-columns:110px 1fr;align-items:start"><div>${foto(s.foto, `destaques.${i}.foto`)}</div><div>${campo('Nome', `destaques.${i}.nome`, s.nome)}${campo('Preço', `destaques.${i}.preco`, s.preco)}${campo('Duração', `destaques.${i}.tempo`, s.tempo)}</div></div></div>`).join(''));
-  h += bloco('Fotos do topo', 'As 4 fotos que trocam no início do site', `<div class="fotos" style="grid-template-columns:1fr 1fr">${D.topo.map((f, i) => foto(f, `topo.${i}`, 'Foto ' + (i + 1), 1)).join('')}</div><p class="dica">Prefira fotos na horizontal, do ambiente ou da fachada.</p>`);
-  h += bloco('Galeria', '11 fotos do clima da casa', `<div class="fotos">${D.galeria.map((f, i) => foto(f, `galeria.${i}`, 'Foto ' + (i + 1))).join('')}</div><p class="dica">Toque numa foto para trocar.</p>`);
-  h += bloco('Antes e depois', 'Mesmo cliente, mesmo ângulo', `<div class="fotos" style="grid-template-columns:1fr 1fr">${foto(D.antesDepois.antes, 'antesDepois.antes', 'Antes')}${foto(D.antesDepois.depois, 'antesDepois.depois', 'Depois')}</div>`);
+    <div class="acoes"><button class="btn out" data-add="${gi}">+ Adicionar serviço</button></div></div>`).join(''));
+  h += bloco('crown', 'Planos', 'Assinatura Flex e Premium (por mês)', D.planos.map((p, i) => `<div class="item"><h3>${esc(p.nome)}</h3><div class="linha"><div>${campo('Flex (R$)', `planos.${i}.flex`, p.flex)}</div><div>${campo('Premium (R$)', `planos.${i}.premium`, p.premium)}</div></div></div>`).join(''));
+  h += bloco('scissors', 'Destaques', 'Os 4 cards de serviço com foto', D.destaques.map((s, i) => `<div class="item"><div class="linha" style="grid-template-columns:110px 1fr;align-items:start"><div>${foto(s.foto, `destaques.${i}.foto`)}</div><div>${campo('Nome', `destaques.${i}.nome`, s.nome)}${campo('Preço', `destaques.${i}.preco`, s.preco)}${campo('Duração', `destaques.${i}.tempo`, s.tempo)}</div></div></div>`).join(''));
+  h += bloco('panels-top-left', 'Fotos do topo', 'As 4 fotos que trocam no início do site', `<div class="fotos" style="grid-template-columns:1fr 1fr">${D.topo.map((f, i) => foto(f, `topo.${i}`, 'Foto ' + (i + 1), 1)).join('')}</div><p class="dica">Prefira fotos na horizontal, do ambiente ou da fachada.</p>`);
+  h += bloco('images', 'Galeria', '11 fotos do clima da casa', `<div class="fotos">${D.galeria.map((f, i) => foto(f, `galeria.${i}`, 'Foto ' + (i + 1))).join('')}</div><p class="dica">Toque numa foto para trocar.</p>`);
+  D.historia = D.historia || ['img/fd3.jpg', 'img/fd7.jpg'];
+  h += bloco('film', 'Nossa história', 'Foto ou vídeo da seção "Desde 2023"', `<div class="fotos" style="grid-template-columns:1fr 1fr">${D.historia.map((f, i) => foto(f, `historia.${i}`, i ? 'Pequena' : 'Grande', 0, 1)).join('')}</div><p class="dica">Pode ser foto ou vídeo curto (até 20 MB). O vídeo roda sozinho, sem som.</p>`);
+  D.parceiros = D.parceiros || [{ categoria: 'Internet', desconto: '30% OFF', nome: 'JATIMnet · na 1ª mensalidade', foto: 'img/parc-jatimnet.jpg' }, { categoria: 'Açaiteria', desconto: '10% OFF', nome: 'Açaiteria Premium', foto: 'img/parc-acaiteria.jpg' }];
+  h += bloco('handshake', 'Parceiros', 'Empresas com desconto pra quem é do clube', D.parceiros.map((p, i) => `<div class="item"><div class="linha" style="grid-template-columns:140px 1fr;align-items:start"><div>${foto(p.foto, `parceiros.${i}.foto`, p.foto ? 'Trocar' : '+ Imagem', 1)}</div><div>${campo('Nome', `parceiros.${i}.nome`, p.nome)}<div class="linha"><div>${campo('Categoria', `parceiros.${i}.categoria`, p.categoria)}</div><div>${campo('Desconto', `parceiros.${i}.desconto`, p.desconto)}</div></div><div class="acoes"><button class="btn out perigo" data-rmp="${i}">Remover parceiro</button></div></div></div></div>`).join('') + `<div class="acoes"><button class="btn out" data-addp="1">+ Adicionar parceiro</button></div><p class="dica">A imagem pode ser a logo ou a fachada do parceiro.</p>`);
+  h += bloco('arrow-left-right', 'Antes e depois', 'Mesmo cliente, mesmo ângulo', `<div class="fotos" style="grid-template-columns:1fr 1fr">${foto(D.antesDepois.antes, 'antesDepois.antes', 'Antes')}${foto(D.antesDepois.depois, 'antesDepois.depois', 'Depois')}</div>`);
   $('#form').innerHTML = h;
+  icones();
 }
 
-function set(k, v) { const p = k.split('.'); let o = D; p.slice(0, -1).forEach((x) => (o = o[x])); o[p.at(-1)] = v; }
+function set(k, v) { const p = k.split('.'); let o = D; p.slice(0, -1).forEach((x) => (o = o[x])); o[p.at(-1)] = v; marcar(true); }
+const atualiza = () => manterAberto(desenha);
 document.addEventListener('input', (e) => { const k = e.target.dataset.k; if (k) set(k, e.target.type == 'checkbox' ? e.target.checked : e.target.value); });
 document.addEventListener('click', (e) => {
-  const rm = e.target.dataset.rm, add = e.target.dataset.add, f = e.target.closest('.foto');
-  if (rm) { const [g, s] = rm.split('.'); D.tabela[g].itens.splice(s, 1); manterAberto(desenha); }
-  if (add) { D.tabela[add].itens.push({ nome: '', tempo: '15 min', preco: 'R$ ' }); manterAberto(desenha); }
-  if (f) { alvo = f; $('#arquivo').value = ''; $('#arquivo').click(); }
+  const t = e.target.closest('button') || e.target, rm = t.dataset.rm, add = t.dataset.add, f = e.target.closest('.foto');
+  if (!$('#app').contains(e.target)) return;
+  if (rm) { const [g, s] = rm.split('.'); D.tabela[g].itens.splice(s, 1); marcar(true); atualiza(); return; }
+  if (add) { D.tabela[add].itens.push({ nome: '', tempo: '15 min', preco: 'R$ ' }); marcar(true); atualiza(); return; }
+  if (t.dataset.rmp) { if (confirm('Remover este parceiro?')) { D.parceiros.splice(+t.dataset.rmp, 1); marcar(true); atualiza(); } return; }
+  if (t.dataset.addp) { D.parceiros.push({ categoria: '', desconto: '10% OFF', nome: '', foto: '' }); marcar(true); atualiza(); return; }
+  if (t.classList.contains('ajustar')) { reajustar(f); return; }
+  if (f) { alvo = f; $('#arquivo').value = ''; $('#arquivo').accept = f.dataset.video ? 'image/*,video/mp4,video/webm,video/quicktime' : 'image/*'; $('#arquivo').click(); }
 });
-function manterAberto(fn) { const ab = [...document.querySelectorAll('details')].map((d) => d.open), y = scrollY; fn(); document.querySelectorAll('details').forEach((d, i) => (d.open = ab[i])); scrollTo(0, y); }
+function manterAberto(fn) { const ab = [...document.querySelectorAll('#form details')].map((d) => d.open), y = scrollY; fn(); document.querySelectorAll('#form details').forEach((d, i) => (d.open = ab[i])); scrollTo(0, y); }
 
+/* ---------- editor: recorte de foto e enquadramento/trecho de vídeo ---------- */
+const ED = { tipo: '', img: null, r: 0, z: 1, ox: 0, oy: 0, px: 50, py: 50, fim: null };
+const cv = $('#cv'), cx = cv.getContext('2d'), vv = $('#vv');
+const maxPalco = () => ({ w: Math.min($('#palco').clientWidth - 20, 520), h: Math.min(innerHeight * 0.5, 520) });
+
+function editar(op) {
+  return new Promise((ok) => {
+    Object.assign(ED, { tipo: op.tipo, r: op.razao, z: 1, ox: 0, oy: 0, px: 50, py: 50, ok });
+    $('#edit').classList.remove('oculto');
+    $('#etit').textContent = op.tipo == 'video' ? 'Ajustar vídeo' : 'Recortar foto';
+    $('#esub').textContent = op.tipo == 'video' ? 'Arraste para enquadrar e escolha o trecho que fica repetindo.' : 'Arraste para posicionar e use o zoom.';
+    $('#cv').classList.toggle('oculto', op.tipo == 'video'); $('#cimg').classList.toggle('oculto', op.tipo == 'video');
+    $('#vquadro').classList.toggle('oculto', op.tipo != 'video'); $('#cvid').classList.toggle('oculto', op.tipo != 'video');
+    $('#zoom').value = 1;
+    const ch = $('#razoes'); ch.innerHTML = '';
+    if (op.tipo == 'img') {
+      ED.img = op.img;
+      if (!op.razao) {
+        const lista = [['Original', op.img.width / op.img.height], ['Quadrada', 1], ['Em pé', 3 / 4], ['Deitada', 4 / 3], ['Larga', 16 / 9]];
+        ch.innerHTML = lista.map(([n, r], i) => `<button data-r="${r}" class="${i ? '' : 'on'}">${n}</button>`).join('');
+        ED.r = lista[0][1];
+      }
+      requestAnimationFrame(montaImg);
+    } else {
+      const pos = (op.q.get('p') || '50,50').split(','), tr = (op.q.get('t') || '').split(',').map(Number);
+      ED.px = +pos[0]; ED.py = +pos[1];
+      vv.src = op.fonte;
+      vv.onloadedmetadata = () => {
+        const d = Math.round(vv.duration * 10) / 10;
+        $('#vini').max = $('#vfim').max = d;
+        $('#vini').value = tr.length == 2 ? tr[0] : 0; $('#vfim').value = tr.length == 2 ? tr[1] : d;
+        tempos(); montaVid(); vv.currentTime = +$('#vini').value; vv.play().catch(() => {});
+      };
+    }
+  });
+}
+function fechar(res) { $('#edit').classList.add('oculto'); vv.pause(); vv.removeAttribute('src'); vv.load(); ED.ok && ED.ok(res); ED.ok = null; }
+$('#ecanc').onclick = () => fechar(null);
+$('#razoes').onclick = (e) => { const b = e.target.closest('button'); if (!b) return; [...$('#razoes').children].forEach((x) => x.classList.toggle('on', x == b)); ED.r = +b.dataset.r; ED.ox = ED.oy = 0; montaImg(); };
+
+function montaImg() {
+  const m = maxPalco(); let w = m.w, h = w / ED.r; if (h > m.h) { h = m.h; w = h * ED.r; }
+  const dpr = devicePixelRatio || 1; cv.style.width = w + 'px'; cv.style.height = h + 'px'; cv.width = w * dpr; cv.height = h * dpr; ED.cw = w; ED.ch = h; ED.dpr = dpr;
+  desenhaImg();
+}
+function geo() {
+  const { img, cw, ch } = ED, s = Math.max(cw / img.width, ch / img.height) * ED.z, dw = img.width * s, dh = img.height * s;
+  ED.ox = Math.max(-(dw - cw) / 2, Math.min((dw - cw) / 2, ED.ox)); ED.oy = Math.max(-(dh - ch) / 2, Math.min((dh - ch) / 2, ED.oy));
+  return { s, x: (cw - dw) / 2 + ED.ox, y: (ch - dh) / 2 + ED.oy, dw, dh };
+}
+function desenhaImg() { const g = geo(); cx.setTransform(ED.dpr, 0, 0, ED.dpr, 0, 0); cx.clearRect(0, 0, ED.cw, ED.ch); cx.drawImage(ED.img, g.x, g.y, g.dw, g.dh); }
+$('#zoom').oninput = (e) => { ED.z = +e.target.value; desenhaImg(); };
+cv.addEventListener('wheel', (e) => { e.preventDefault(); ED.z = Math.max(1, Math.min(4, ED.z * (e.deltaY < 0 ? 1.08 : 0.93))); $('#zoom').value = ED.z; desenhaImg(); }, { passive: false });
+
+function montaVid() {
+  const m = maxPalco(), r = ED.r || 4 / 5; let w = m.w, h = w / r; if (h > m.h) { h = m.h; w = h * r; }
+  Object.assign($('#vquadro').style, { width: w + 'px', height: h + 'px' }); posVid();
+}
+const posVid = () => (vv.style.objectPosition = `${ED.px}% ${ED.py}%`);
+function tempos() {
+  let a = +$('#vini').value, b = +$('#vfim').value; if (b - a < 0.5) { if (document.activeElement == $('#vini')) a = Math.max(0, b - 0.5); else b = Math.min(+$('#vfim').max, a + 0.5); $('#vini').value = a; $('#vfim').value = b; }
+  $('#li').textContent = a.toFixed(1) + 's'; $('#lf').textContent = b.toFixed(1) + 's';
+}
+$('#vini').oninput = () => { tempos(); vv.currentTime = +$('#vini').value; };
+$('#vfim').oninput = () => { tempos(); vv.currentTime = Math.max(+$('#vini').value, +$('#vfim').value - 0.3); };
+vv.ontimeupdate = () => { if (vv.currentTime >= +$('#vfim').value || vv.currentTime < +$('#vini').value - 0.2) vv.currentTime = +$('#vini').value; };
+
+// arrastar (foto e vídeo)
+function arrastavel(el, mover) {
+  let ult = null;
+  el.addEventListener('pointerdown', (e) => { ult = [e.clientX, e.clientY]; el.setPointerCapture(e.pointerId); });
+  el.addEventListener('pointermove', (e) => { if (!ult) return; mover(e.clientX - ult[0], e.clientY - ult[1]); ult = [e.clientX, e.clientY]; });
+  el.addEventListener('pointerup', () => (ult = null)); el.addEventListener('pointercancel', () => (ult = null));
+}
+arrastavel(cv, (dx, dy) => { ED.ox += dx; ED.oy += dy; desenhaImg(); });
+arrastavel($('#vquadro'), (dx, dy) => {
+  const b = $('#vquadro'), bw = b.clientWidth, bh = b.clientHeight, s = Math.max(bw / vv.videoWidth, bh / vv.videoHeight);
+  const sx = vv.videoWidth * s - bw, sy = vv.videoHeight * s - bh;
+  if (sx > 1) ED.px = Math.max(0, Math.min(100, ED.px - (dx / sx) * 100));
+  if (sy > 1) ED.py = Math.max(0, Math.min(100, ED.py - (dy / sy) * 100));
+  posVid();
+});
+
+$('#eok').onclick = () => {
+  if (ED.tipo == 'video') return fechar({ frag: `p=${Math.round(ED.px)},${Math.round(ED.py)}&t=${(+$('#vini').value).toFixed(1)},${(+$('#vfim').value).toFixed(1)}` });
+  const g = geo(), sx = -g.x / g.s, sy = -g.y / g.s, sw = ED.cw / g.s, sh = ED.ch / g.s;
+  const k = Math.min(1, 1600 / Math.max(sw, sh)), c = document.createElement('canvas');
+  c.width = Math.round(sw * k); c.height = Math.round(sh * k);
+  c.getContext('2d').drawImage(ED.img, sx, sy, sw, sh, 0, 0, c.width, c.height);
+  fechar({ url: c.toDataURL('image/jpeg', 0.86) });
+};
+addEventListener('resize', () => { if ($('#edit').classList.contains('oculto')) return; ED.tipo == 'video' ? montaVid() : montaImg(); });
+
+/* ---------- envio ---------- */
 let alvo = null, enviando = 0;
+const lerBase64 = (arq) => new Promise((ok, erro) => { const r = new FileReader(); r.onload = () => ok(r.result.split(',')[1]); r.onerror = erro; r.readAsDataURL(arq); });
+const carregaImg = (url) => new Promise((ok, erro) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => erro(new Error('Não consegui abrir a imagem')); i.src = url; });
+
+async function enviarFoto(el, url) {
+  el.classList.add('env'); enviando++;
+  try { const { caminho } = await api('/foto', { base64: url.split(',')[1] }); set(el.dataset.k, caminho); aviso('Foto enviada! Não esqueça de salvar.'); atualiza(); }
+  catch (er) { aviso(er.message, 1); }
+  el.classList.remove('env'); enviando--;
+}
+
 $('#arquivo').onchange = async (e) => {
   const arq = e.target.files[0], el = alvo; if (!arq) return;
-  el.classList.add('env'); enviando++;
   try {
+    if (arq.type.startsWith('video/')) {
+      if (arq.size > 20e6) throw new Error('Vídeo grande demais, máximo 20 MB');
+      const r = await editar({ tipo: 'video', fonte: URL.createObjectURL(arq), razao: razaoDe(el.dataset.k), q: new URLSearchParams() });
+      if (!r) return;
+      el.classList.add('env'); enviando++;
+      try {
+        const ext = (arq.name.split('.').pop() || 'mp4').toLowerCase();
+        const { caminho } = await api('/foto', { base64: await lerBase64(arq), ext: ['mp4', 'webm', 'mov'].includes(ext) ? ext : 'mp4' });
+        set(el.dataset.k, caminho + '#' + r.frag); aviso('Vídeo enviado! Não esqueça de salvar.'); atualiza();
+      } finally { el.classList.remove('env'); enviando--; }
+      return;
+    }
     const img = await createImageBitmap(arq, { imageOrientation: 'from-image' });
-    const k = Math.min(1, 1600 / Math.max(img.width, img.height)), c = document.createElement('canvas');
-    c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
-    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
-    const url = c.toDataURL('image/jpeg', 0.86);
-    $('img', el).src = url;
-    const { caminho } = await api('/foto', { base64: url.split(',')[1] });
-    set(el.dataset.k, caminho); aviso('Foto enviada! Não esqueça de salvar.');
+    const r = await editar({ tipo: 'img', img, razao: razaoDe(el.dataset.k) });
+    if (r) await enviarFoto(el, r.url);
   } catch (er) { aviso(er.message, 1); }
-  el.classList.remove('env'); enviando--;
 };
+
+async function reajustar(el) {
+  const atual = el.dataset.k.split('.').reduce((o, x) => o[x], D), { base, q } = partes(atual);
+  try {
+    if (ehVideo(base)) {
+      const r = await editar({ tipo: 'video', fonte: src(base), razao: razaoDe(el.dataset.k), q });
+      if (r) { set(el.dataset.k, base + '#' + r.frag); aviso('Vídeo ajustado! Não esqueça de salvar.'); atualiza(); }
+      return;
+    }
+    const img = await carregaImg(src(base));
+    const r = await editar({ tipo: 'img', img, razao: razaoDe(el.dataset.k) });
+    if (r) await enviarFoto(el, r.url);
+  } catch (er) { aviso(er.message, 1); }
+}
 
 $('#salvar').onclick = async () => {
   if (enviando) return aviso('Espere as fotos terminarem de enviar', 1);
-  const b = $('#salvar'); b.disabled = true; b.textContent = 'Salvando...';
-  try { await api('/salvar', D); aviso('Salvo! O site atualiza em 1 ou 2 minutos.'); }
+  const b = $('#salvar'); b.disabled = true; b.lastChild.textContent = 'Salvando...';
+  try { await api('/salvar', D); marcar(false); aviso('Salvo! O site atualiza em 1 ou 2 minutos.'); }
   catch (e) { aviso(e.message, 1); }
-  b.disabled = false; b.textContent = 'Salvar alterações';
+  b.disabled = false; b.lastChild.textContent = 'Salvar alterações';
 };
 
 if (token) abrir();

@@ -33,7 +33,7 @@
       "nome": "Sobrancelha",
       "preco": "A partir de R$ 20",
       "tempo": "15 min",
-      "foto": "img/ig9.jpg"
+      "foto": "img/sobrancelha.jpg"
     }
   ],
   "tabela": [
@@ -197,6 +197,23 @@
     "img/g9.jpg",
     "img/g10.jpg",
     "img/g11.jpg"
+  ],
+  "historia": [
+    "img/fd3.jpg","img/hist1.mp4"
+  ],
+  "parceiros": [
+    {
+      "categoria": "Internet",
+      "desconto": "30% OFF",
+      "nome": "JATIMnet · na 1ª mensalidade",
+      "foto": "img/parc-jatimnet.jpg"
+    },
+    {
+      "categoria": "Açaiteria",
+      "desconto": "10% OFF",
+      "nome": "Açaiteria Premium",
+      "foto": "img/parc-acaiteria.jpg"
+    }
   ],
   "antesDepois": {
     "antes": "img/antes.jpg",
